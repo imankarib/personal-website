@@ -1,6 +1,460 @@
 @import "tailwindcss";
 
+/* ============================================
+   DESIGN SYSTEM — Editorial Journal
+   ============================================ */
+
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* --- Palette --- */
+  --color-paper: #FAF7F2;
+  --color-paper-dark: #F3EDE4;
+  --color-ink: #121212;
+  --color-secondary: #4B4B4B;
+  --color-hairline: #E7E1D8;
+  --color-accent: #2D3A8C;
+  --color-accent-light: #ECEEF8;
+  --color-glow: #34D399;
+
+  /* --- Typography --- */
+  --font-heading: var(--font-fraunces), "Georgia", serif;
+  --font-body: var(--font-source-serif), "Georgia", serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* ============================================
+   DARK MODE — Bioluminescence Theme
+   ============================================ */
+
+[data-theme="dark"] {
+  --color-paper: #0B1120;
+  --color-paper-dark: #060D1B;
+  --color-ink: #E2E8F0;
+  --color-secondary: #94A3B8;
+  --color-hairline: #1E293B;
+  --color-accent: #4ADE80;
+  --color-accent-light: #0A1F12;
+  --color-glow: #4ADE80;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-ink);
+}
+
+/* ============================================
+   ARTICLE BODY — Prose Styles
+   ============================================ */
+
+.article-body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.78;
+  color: var(--color-ink);
+}
+
+.article-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2.5em;
+  margin-bottom: 0.6em;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+.article-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: var(--color-ink);
+}
+
+.article-body p {
+  margin-bottom: 1em;
+}
+
+.article-body a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-color: var(--color-hairline);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.article-body a:hover {
+  text-decoration-color: var(--color-accent);
+}
+
+.article-body strong {
+  font-weight: 650;
+}
+
+.article-body em {
+  font-style: italic;
+}
+
+.article-body ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.article-body ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.article-body li {
+  margin-bottom: 0.35em;
+  padding-left: 0.25em;
+}
+
+.article-body li::marker {
+  color: var(--color-secondary);
+}
+
+.article-body blockquote {
+  border-left: 2px solid var(--color-hairline);
+  padding-left: 1.25em;
+  margin: 1.5em 0;
+  color: var(--color-secondary);
+  font-style: italic;
+}
+
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--color-hairline);
+  margin: 2.5em 0;
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background-color: var(--color-paper-dark);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+.article-body pre {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  background-color: var(--color-paper-dark);
+  border: 1px solid var(--color-hairline);
+  border-radius: 4px;
+  padding: 1.25em 1.5em;
+  margin: 1.5em 0;
+  overflow-x: auto;
+}
+
+.article-body pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+.article-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+
+/* ============================================
+   MARGIN NOTES — Desktop side / Mobile inline
+   ============================================ */
+
+.article-with-margins {
+  position: relative;
+}
+
+.margin-note {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-secondary);
+}
+
+@media (min-width: 1200px) {
+  .margin-note {
+    position: absolute;
+    right: -240px;
+    width: 210px;
+    margin-top: 0.15em;
+  }
+
+  .margin-note::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 0.45em;
+    width: 8px;
+    height: 1px;
+    background-color: var(--color-hairline);
+  }
+}
+
+@media (max-width: 1199px) {
+  .margin-note {
+    display: block;
+    background-color: var(--color-paper-dark);
+    border-left: 2px solid var(--color-hairline);
+    padding: 0.75em 1em;
+    margin: 1em 0;
+    border-radius: 0 3px 3px 0;
+  }
+}
+
+/* ============================================
+   FIGURE — Slightly wider than text
+   ============================================ */
+
+.figure-wide {
+  margin-left: -2rem;
+  margin-right: -2rem;
+}
+
+@media (max-width: 768px) {
+  .figure-wide {
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+}
+
+/* ============================================
+   NAV — Animated underline
+   ============================================ */
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-link-active::after {
+  transform: scaleX(1);
+}
+
+/* ============================================
+   DROP CAP — Deep Dive articles
+   ============================================ */
+
+.drop-cap::first-letter {
+  font-family: var(--font-heading);
+  float: left;
+  font-size: 3.75em;
+  line-height: 0.78;
+  padding-right: 0.1em;
+  margin-top: 0.07em;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* ============================================
+   HERO — Bioluminescent gradient
+   ============================================ */
+
+@keyframes gradient-drift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(74, 222, 128, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 60%, rgba(251, 191, 36, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 100% 80% at 50% 50%, rgba(45, 58, 140, 0.1) 0%, transparent 70%),
+    linear-gradient(135deg, #0B1120 0%, #101D35 50%, #0B1120 100%);
+  background-size: 200% 200%;
+  animation: gradient-drift 15s ease-in-out infinite;
+}
+
+.hero-title-glow {
+  text-shadow:
+    0 0 80px rgba(74, 222, 128, 0.1),
+    0 0 160px rgba(74, 222, 128, 0.04);
+}
+
+/* ============================================
+   HERO — Floating particles (pure CSS)
+   ============================================ */
+
+@keyframes float-up {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.8; }
+  100% { transform: translateY(-120px) translateX(20px); opacity: 0; }
+}
+
+@keyframes float-up-alt {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  15%  { opacity: 0.7; }
+  85%  { opacity: 0.5; }
+  100% { transform: translateY(-90px) translateX(-18px); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.particle:nth-child(1) {
+  width: 3px; height: 3px; left: 10%; top: 75%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.8), transparent 70%);
+  animation: float-up 10s ease-in-out infinite;
+}
+
+.particle:nth-child(2) {
+  width: 2px; height: 2px; left: 30%; top: 85%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.7), transparent 70%);
+  animation: float-up-alt 8s ease-in-out infinite 2s;
+}
+
+.particle:nth-child(3) {
+  width: 4px; height: 4px; left: 55%; top: 70%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.5), transparent 70%);
+  animation: float-up 13s ease-in-out infinite 4s;
+}
+
+.particle:nth-child(4) {
+  width: 2px; height: 2px; left: 75%; top: 80%;
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.5), transparent 70%);
+  animation: float-up-alt 9s ease-in-out infinite 1s;
+}
+
+.particle:nth-child(5) {
+  width: 3px; height: 3px; left: 88%; top: 65%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.6), transparent 70%);
+  animation: float-up 11s ease-in-out infinite 6s;
+}
+
+.particle:nth-child(6) {
+  width: 2px; height: 2px; left: 22%; top: 90%;
+  background: radial-gradient(circle, rgba(74, 222, 128, 0.4), transparent 70%);
+  animation: float-up 14s ease-in-out infinite 3s;
+}
+
+/* ============================================
+   HERO — Entrance animation
+   ============================================ */
+
+@keyframes hero-fade-in {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content {
+  animation: hero-fade-in 0.8s ease-out both;
+}
+
+.hero-figure {
+  animation: hero-fade-in 0.8s ease-out 0.15s both;
+}
+
+/* ============================================
+   SCROLL ANIMATIONS — Fade in on scroll
+   ============================================ */
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   ARROW SLIDE — Hover micro-interaction
+   ============================================ */
+
+.arrow-slide {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+a:hover .arrow-slide {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   INDEX PILLS — Interactive topic tags
+   ============================================ */
+
+.index-pill {
+  transition: all 0.2s ease;
+}
+
+.index-pill:hover {
+  border-color: var(--color-glow);
+  color: var(--color-glow);
+  box-shadow: 0 0 12px rgba(52, 211, 153, 0.12);
+}
+
+[data-theme="dark"] .index-pill:hover {
+  box-shadow: 0 0 16px rgba(74, 222, 128, 0.18);
+}
+
+/* ============================================
+   FOCUS CARD — Depth & hover lift
+   ============================================ */
+
+.focus-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .focus-card:hover {
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(74, 222, 128, 0.06);
 }
