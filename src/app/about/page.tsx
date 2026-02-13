@@ -36,9 +36,7 @@ export default function AboutPage() {
               I&rsquo;m Iman.
             </h1>
             <div className="bg-accent mt-4 h-[2px] w-10" aria-hidden="true" />
-            <p className="text-secondary mt-5 text-[1.0625rem] leading-relaxed">
-              A 24 year old learning synthetic biology in public.
-            </p>
+            <p className="text-secondary mt-5 text-[1.0625rem] leading-relaxed"></p>
           </div>
         </div>
       </header>

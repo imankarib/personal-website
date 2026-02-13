@@ -153,61 +153,84 @@ export const deepDives: Post[] = [
 
 export const projects: Project[] = [
   {
-    slug: "diy-pcr-thermocycler",
-    title: "Building a DIY PCR Thermocycler",
-    deck: "Designing and building a functional thermocycler from off-the-shelf components.",
+    slug: "enzyme-hunt",
+    title: "The Enzyme Hunt",
+    deck: "Tracking down the elusive luciferin synthase that could unlock autonomous bioluminescence in plants.",
     description:
-      "PCR is fundamental to molecular biology, and a thermocycler is the machine that makes it possible. I'm building one from scratch to understand the engineering behind precise temperature cycling—and to have a working tool for future experiments.",
+      "Since Keith Wood's landmark 1986 experiment, no one has achieved autonomous firefly bioluminescence in plants: the missing piece is the enzyme that synthesizes luciferin. Through computational analysis of firefly genomes, I've identified certain candidates. This project follows the trail from AlphaFold predictions and geometric docking to wet-lab validation in N. benthamiana using MoClo modular cloning.",
     status: "active",
-    tags: ["Hardware", "PCR", "DIY", "Engineering"],
+    tags: ["Research", "Bioinformatics", "Bioluminescence"],
     milestones: [
       {
-        title: "Research & design phase",
-        date: "2024-01-20",
+        title: "Computational target identification",
+        date: "2025-02-01",
         description:
-          "Surveyed existing DIY builds, selected Peltier modules and Arduino-based PID control approach.",
+          "Surveyed firefly genomes and identified PPYR_12315 as a candidate luciferin synthase. Ran AlphaFold structure prediction and geometric docking analysis against known substrates.",
       },
       {
-        title: "Heating block prototype",
-        date: "2024-02-05",
+        title: "Cross species validation",
+        date: "2025-02-15",
         description:
-          "First aluminum heating block with Peltier element. Achieving ±0.5°C accuracy at steady state.",
-        linkedPostSlug: "setting-up-home-lab",
+          "Confirmed PPYR_12315 is conserved across the entire Lampyridae family, strengthening the case that it plays a functional role in luciferin biosynthesis.",
       },
       {
-        title: "PID controller tuning",
-        date: "2024-02-20",
+        title: "Gene design and ordering",
+        date: "2025-03-01",
         description:
-          "Implemented PID control loop. Ramp rates need improvement—currently 1.2°C/sec heating, 0.8°C/sec cooling.",
+          "Designed four synthetic genes (Luc2, BGL, PPYR_12315 full length, and PPYR_12315 ΔSP) optimized for plant expression and compatible with MoClo assembly.",
       },
       {
-        title: "Full cycle testing",
-        date: "2024-03-10",
+        title: "Plant preparation",
+        date: "2025-03-01",
         description:
-          "Running complete PCR temperature profiles. 35-cycle program completes in ~90 minutes.",
+          "Started N. benthamiana seeds. Plants need 4 to 5 weeks to reach the right size for agroinfiltration.",
+      },
+      {
+        title: "MoClo assembly and agroinfiltration",
+        date: "2025-04-01",
+        description:
+          "Assembling the five step experimental ladder and infiltrating N. benthamiana leaves to test for autonomous bioluminescence.",
       },
     ],
   },
   {
-    slug: "bioluminescent-bacteria",
-    title: "Engineering Bioluminescent Bacteria",
-    deck: "Expressing the lux operon in E. coli to create living light.",
+    slug: "glowing-plants",
+    title: "Engineering Bioluminescent Plants",
+    deck: "Bringing firefly light to plants using synthetic gene circuits.",
     description:
-      "Bioluminescence is one of the most visually striking phenomena in biology. This project aims to express the luxCDABE operon from Vibrio fischeri in E. coli, creating bacteria that glow without any external substrate.",
-    status: "paused",
-    tags: ["Bioluminescence", "E. coli", "Gene Expression", "lux"],
+      "The ultimate goal of my synthetic biology work: making plants that glow autonomously. This project takes the candidate genes identified in the Missing Enzyme Hunt and engineers them into a functional bioluminescent pathway in N. benthamiana. Starting with known components like firefly luciferase and working up to the full four gene pathway with BGL, Laccase, ACOT1, and AkaLuc, all targeted to the peroxisome for autonomous luciferin production.",
+    status: "active",
+    tags: ["Bioluminescence", "Plant Biology", "Wet Lab"],
     milestones: [
       {
-        title: "Literature review",
-        date: "2024-02-01",
+        title: "First bacterial transformation",
+        date: "2025-02-01",
         description:
-          "Studied the lux operon structure, promoter options, and previous iGEM team approaches.",
+          "Performed first hands on cloning work, transforming E. coli with pTIR DV and pSB1C3 plasmids at Scott's community lab. Built foundational wet lab skills.",
       },
       {
-        title: "Plasmid design",
-        date: "2024-02-15",
+        title: "Agrobacterium strain acquired",
+        date: "2025-02-15",
         description:
-          "Designed construct with constitutive promoter driving luxCDABE. Ordered from IDT.",
+          "Secured access to Agrobacterium tumefaciens GV3101 through Michael Rae at the community lab. Navigated Canadian regulatory requirements to confirm no special licensing needed.",
+      },
+      {
+        title: "N. benthamiana seedlings started",
+        date: "2025-03-01",
+        description:
+          "Sourced and planted N. benthamiana seeds. These need 4 to 5 weeks of growth before they are ready for agroinfiltration experiments.",
+      },
+      {
+        title: "MoClo toolkit and gene assembly",
+        date: "2025-03-15",
+        description:
+          "Assembling synthetic genes into MoClo compatible expression cassettes with peroxisome targeting signals for the full bioluminescent pathway.",
+      },
+      {
+        title: "Agroinfiltration and glow testing",
+        date: "2025-04-15",
+        description:
+          "Infiltrating N. benthamiana leaves with the engineered constructs and imaging for bioluminescence in a dark room. The moment of truth.",
       },
     ],
   },
@@ -242,10 +265,7 @@ export function getFeaturedPosts(): Post[] {
   return getAllPosts().filter((p) => p.featured);
 }
 
-export function getPostBySlug(
-  slug: string,
-  type: PostType,
-): Post | undefined {
+export function getPostBySlug(slug: string, type: PostType): Post | undefined {
   const source = type === "lab-note" ? labNotes : deepDives;
   return source.find((p) => p.slug === slug);
 }

@@ -62,34 +62,34 @@ function CheckboxIcon({ checked }: { checked: boolean }) {
 
 export function CurrentFocusCard() {
   return (
-    <section className="border-t border-hairline py-14">
+    <section className="border-hairline border-t py-14">
       <div className="mx-auto max-w-[1040px] px-6">
         <Link href="/projects/diy-pcr-thermocycler" className="block">
-          <div className="focus-card max-w-[520px] rounded-lg border border-hairline border-l-[3px] border-l-glow bg-gradient-to-br from-paper-dark to-paper py-5 pl-5 pr-6 shadow-sm">
+          <div className="focus-card border-hairline border-l-glow from-paper-dark to-paper max-w-[520px] rounded-lg border border-l-[3px] bg-gradient-to-br py-5 pr-6 pl-5 shadow-sm">
             {/* Label */}
-            <p className="font-mono text-[0.625rem] uppercase tracking-[0.2em] text-secondary/60">
+            <p className="text-secondary/60 font-mono text-[0.625rem] tracking-[0.2em] uppercase">
               Current focus
             </p>
 
             {/* Title */}
-            <h3 className="mt-2.5 font-heading text-[1.125rem] font-semibold leading-snug text-ink">
-              Building a DIY PCR Thermocycler
+            <h3 className="font-heading text-ink mt-2.5 text-[1.125rem] leading-snug font-semibold">
+              The Missing Enzyme Hunt
             </h3>
 
             {/* Description */}
-            <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-secondary">
+            <p className="text-secondary mt-1.5 text-[0.9375rem] leading-relaxed">
               Designing a functional thermocycler from off-the-shelf components.
               Currently tuning the PID controller for faster ramp rates.
             </p>
 
             {/* Meta */}
-            <p className="mt-3 font-mono text-[0.6875rem] text-secondary/60">
+            <p className="text-secondary/60 mt-3 font-mono text-[0.6875rem]">
               In progress &middot; Last update: Feb 2026
             </p>
 
             {/* Milestones */}
-            <div className="mt-4 border-t border-hairline pt-4">
-              <p className="font-mono text-[0.625rem] uppercase tracking-[0.15em] text-secondary/60">
+            <div className="border-hairline mt-4 border-t pt-4">
+              <p className="text-secondary/60 font-mono text-[0.625rem] tracking-[0.15em] uppercase">
                 Milestones
               </p>
               <ul className="mt-2.5 space-y-2">
@@ -99,7 +99,7 @@ export function CurrentFocusCard() {
                     <span
                       className={`text-[0.8125rem] leading-snug ${
                         m.done
-                          ? "text-secondary/50 line-through decoration-hairline"
+                          ? "text-secondary/50 decoration-hairline line-through"
                           : "text-ink"
                       }`}
                     >

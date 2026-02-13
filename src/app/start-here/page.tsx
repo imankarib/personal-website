@@ -11,7 +11,7 @@ const contentTypes = [
   {
     title: "Lab Notes",
     description:
-      "Short, frequent entries written close to the moment of learning. These are raw and honest — experiments that worked, experiments that failed, and what I observed.",
+      "Short, frequent entries written close to the moment of learning. These are raw and honest: experiments that worked, experiments that failed, and what I observed.",
     href: "/lab-notes",
     label: "Browse lab notes",
   },
@@ -25,7 +25,7 @@ const contentTypes = [
   {
     title: "Projects",
     description:
-      "Hub pages for longer-running efforts — things like building lab equipment or engineering organisms. Each project tracks milestones and links back to relevant lab notes.",
+      "Hub pages for longer-running efforts.",
     href: "/projects",
     label: "Browse projects",
   },
