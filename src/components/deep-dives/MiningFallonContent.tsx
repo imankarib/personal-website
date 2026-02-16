@@ -5,9 +5,9 @@ export function MiningFallonContent() {
   return (
     <>
       <p className="drop-cap">
-        I took the differential expression data from Fallon et al. (2018) and
-        applied two layers of filtering&mdash;expression enrichment and enzyme
-        annotation&mdash;to reduce the <em>Photinus pyralis</em> genome from
+        To start, I took the differential expression data from Fallon et al.
+        (2018) and applied two layers of filtering (expression enrichment and
+        enzyme annotation) to reduce the <em>Photinus pyralis</em> genome from
         15,773 genes to a manageable set of luciferin biosynthesis candidates.
         After cross-species BLAST analysis, phylogenetics, and manual review,
         three novel candidates and one known candidate emerged.
@@ -18,19 +18,19 @@ export function MiningFallonContent() {
 
       <ul>
         <li>
-          <code>PPYR_OGS1.1.enzyme.ids.txt</code> &mdash; Fallon&rsquo;s enzyme
+          <code>PPYR_OGS1.1.enzyme.ids.txt</code> Fallon&rsquo;s enzyme
           annotation list. Essential for the second filtering step, where I
           narrow candidates to genes that are likely to encode enzymes.
         </li>
         <li>
-          <code>PPYR_OGS1.1_fatbody-vs-lantern&hellip;_test.txt</code>{" "}
-          &mdash; Differential expression results, including q-values (adjusted
+          <code>PPYR_OGS1.1_fatbody-vs-lantern&hellip;_test.txt</code>
+          Differential expression results, including q-values (adjusted
           p-values). Used to determine which genes are significantly enriched in
           the lantern.
         </li>
         <li>
-          <strong>HMMER hmmscan</strong> &mdash; Used later to look for known
-          protein domains in candidate sequences.
+          <strong>HMMER hmmscan</strong>: Used to look for known protein domains
+          in candidate sequences.
         </li>
       </ul>
 
@@ -38,9 +38,9 @@ export function MiningFallonContent() {
       <h2>Why compare lantern vs. fat body?</h2>
 
       <p>
-        The fat body in insects is roughly analogous to a liver. It handles
-        general metabolic tasks: fat storage, detoxification, immune activity,
-        and protein synthesis. It&rsquo;s distributed throughout the body cavity.
+        The fat body in insects is analogous to a liver. It handles general
+        metabolic tasks: fat storage, detoxification, immune activity, and
+        protein synthesis.
       </p>
 
       <p>
@@ -68,7 +68,7 @@ export function MiningFallonContent() {
       </MarginNote>
 
       {/* -------------------------------------------------- */}
-      <h2>What I did</h2>
+      <h2>What I did:</h2>
 
       <p>
         I took the three files from Fallon et al. (2018) and applied two layers
@@ -83,36 +83,35 @@ export function MiningFallonContent() {
         <strong>all three criteria</strong>:
       </p>
 
-      <div className="my-6 rounded-lg border border-hairline bg-paper-dark px-5 py-4">
+      <div className="border-hairline bg-paper-dark my-6 rounded-lg border px-5 py-4">
         <ul className="m-0 list-none space-y-2 p-0">
           <li className="flex items-start gap-3">
-            <span className="mt-0.5 font-mono text-xs font-semibold text-accent">
+            <span className="text-accent mt-0.5 font-mono text-xs font-semibold">
               1
             </span>
             <span>
-              <strong>Lantern TPM &ge; 50</strong> &mdash; Moderate expression
-              in the lantern. For reference, luciferase sits at ~66,743 TPM.
+              <strong>Lantern TPM &ge; 50</strong>: Moderate expression in the
+              lantern. For reference, luciferase sits at ~66,743 TPM.
             </span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="mt-0.5 font-mono text-xs font-semibold text-accent">
+            <span className="text-accent mt-0.5 font-mono text-xs font-semibold">
               2
             </span>
             <span>
-              <strong>Sleuth b &ge; 3</strong> &mdash; Estimated
-              log&#x2082;&nbsp;fold change. b&nbsp;=&nbsp;3 means ~8&times;
-              higher expression in lantern; b&nbsp;=&nbsp;5 means ~32&times;
-              higher.
+              <strong>Sleuth b &ge; 3</strong>: Estimated log&#x2082;&nbsp;fold
+              change. b&nbsp;=&nbsp;3 means ~8&times; higher expression in
+              lantern; b&nbsp;=&nbsp;5 means ~32&times; higher.
             </span>
           </li>
           <li className="flex items-start gap-3">
-            <span className="mt-0.5 font-mono text-xs font-semibold text-accent">
+            <span className="text-accent mt-0.5 font-mono text-xs font-semibold">
               3
             </span>
             <span>
-              <strong>qval &le; 1e-10</strong> &mdash; Adjusted p-value
-              corrected for testing ~15,773 genes at once. Less than 1 in 10
-              billion chance the observed difference is random.
+              <strong>qval &le; 1e-10</strong>: Adjusted p-value corrected for
+              testing ~15,773 genes at once. Less than 1 in 10 billion chance
+              the observed difference is random.
             </span>
           </li>
         </ul>
@@ -124,13 +123,13 @@ export function MiningFallonContent() {
       </p>
 
       <Callout label="Important caveat">
-        These thresholds are somewhat arbitrary. By requiring b&nbsp;&ge;&nbsp;3,
-        I might miss real candidates that are only moderately enriched (say
-        4&times; instead of 8&times;). And the strict q-value filter actually
-        excluded <em>luciferase itself</em> because one fat-body replicate
-        showed unusually high expression, which increased variance. So this
-        filter is a way to get a manageable list&mdash;not a guarantee we
-        captured everything important.
+        These thresholds are somewhat arbitrary. By requiring
+        b&nbsp;&ge;&nbsp;3, I might miss real candidates that are only
+        moderately enriched (say 4&times; instead of 8&times;). And the strict
+        q-value filter actually excluded <em>luciferase itself</em> because one
+        fat-body replicate showed unusually high expression, which increased
+        variance. So this filter is a way to get a manageable list, not a
+        guarantee we captured everything important.
       </Callout>
 
       {/* -- LAYER B ---------------------------------------- */}
@@ -156,14 +155,14 @@ export function MiningFallonContent() {
         enzyme candidates.
       </p>
 
-      <Callout label="Blind spot">
+      <Callout label="Important caveat 2">
         This filter depends entirely on whether InterProScan can recognize the
-        protein. If luciferin synthase is a truly novel enzyme&mdash;one that
-        evolved a new function from a non-enzymatic scaffold, or diverged far
-        from known enzyme families&mdash;InterProScan might not classify it as
-        catalytic. In that case, it wouldn&rsquo;t appear in the enzyme list and
-        I&rsquo;d miss it entirely. In fact, 23 of the 41 lantern-enriched
-        genes were removed at this step.
+        protein. If luciferin synthase is a truly novel enzyme, one that evolved
+        a new function from a non-enzymatic scaffold, or diverged far from known
+        enzyme families, InterProScan might not classify it as catalytic. In
+        that case, it wouldn&rsquo;t appear in the enzyme list and would be
+        missed entirely. 23 of the 41 lantern-enriched genes were removed at
+        this step.
       </Callout>
 
       {/* -------------------------------------------------- */}
@@ -172,10 +171,9 @@ export function MiningFallonContent() {
       <p>
         After filtering, I reviewed each remaining gene using its GO annotations
         and HMMER domain hits to see whether the predicted chemistry made sense.
-        I focused on activities consistent with luciferin biosynthesis&mdash;things
-        like small-molecule metabolism, oxidation, or cyclization&mdash;and
-        deprioritized genes involved in clearly unrelated processes, like
-        kinases, motor proteins, or signaling enzymes.
+        I focused on activities consistent with luciferin biosynthesis (things
+        like small-molecule metabolism, oxidation, or cyclization) and
+        deprioritized genes involved in clearly unrelated processes.
       </p>
 
       {/* -------------------------------------------------- */}
@@ -189,16 +187,16 @@ export function MiningFallonContent() {
       <p>
         Luciferase (<code>PPYR_00001</code>) has b&nbsp;=&nbsp;5.27 (very strong
         enrichment) but qval&nbsp;&asymp;&nbsp;9e-5, which is above my cutoff.
-        Why? One fat-body replicate had unexpectedly high luciferase expression
-        (~3,693 TPM, compared to ~61 and ~162 in the other two). That inflated
-        the variance, so sleuth still flagged it as significant, but with less
-        statistical confidence.
+        This happene as one fat-body replicate had unexpectedly high luciferase
+        expression (~3,693 TPM, compared to ~61 and ~162 in the other two). That
+        inflated the variance, so sleuth still flagged it as significant, but
+        with less statistical confidence.
       </p>
 
       <p>
         This is a reminder that the pipeline is conservative. Even known
         bioluminescence genes can fall outside strict thresholds because of
-        replicate noise.
+        replicate noise. I will need to expand my search going forward.
       </p>
 
       {/* -------------------------------------------------- */}
@@ -212,7 +210,7 @@ export function MiningFallonContent() {
       {/* -- PPYR_09240 ------------------------------------- */}
       <h3>
         <code>PPYR_09240</code>{" "}
-        <span className="ml-2 rounded-full bg-paper-dark px-2.5 py-0.5 font-mono text-[0.6875rem] text-secondary">
+        <span className="bg-paper-dark text-secondary ml-2 rounded-full px-2.5 py-0.5 font-mono text-[0.6875rem]">
           Discarded
         </span>
       </h3>
@@ -238,31 +236,31 @@ export function MiningFallonContent() {
       {/* -- PPYR_06980 ------------------------------------- */}
       <h3>
         <code>PPYR_06980</code>{" "}
-        <span className="ml-2 rounded-full bg-paper-dark px-2.5 py-0.5 font-mono text-[0.6875rem] text-secondary">
+        <span className="bg-paper-dark text-secondary ml-2 rounded-full px-2.5 py-0.5 font-mono text-[0.6875rem]">
           Discarded
         </span>
       </h3>
 
       <p>
         Cytochrome P450 4g15 (CYP4G15). Present across essentially all beetles,
-        not just fireflies: ~74&ndash;97% identity in fireflies,
-        ~71&ndash;73% in non-luminous beetles, and ~73&ndash;74% even in other
-        luminous beetles (e.g., click beetles).
+        not just fireflies: ~74&ndash;97% identity in fireflies, ~71&ndash;73%
+        in non-luminous beetles, and ~73&ndash;74% even in other luminous
+        beetles (e.g., click beetles).
       </p>
 
       <p>
         CYP4G15 is a well-characterized insect enzyme involved in cuticular
-        hydrocarbon biosynthesis&mdash;it produces the waxy waterproof coating on
-        the insect&rsquo;s surface. Since every beetle needs this function, the
-        gene is highly conserved and not specific to bioluminescent species.
-        Although strongly expressed in the lantern, the most likely explanation
-        is structural rather than involvement in luciferin biosynthesis.
+        hydrocarbon biosynthesis, it produces the waxy waterproof coating on the
+        insect&rsquo;s surface. Since every beetle needs this function, the gene
+        is highly conserved and not specific to bioluminescent species. Although
+        strongly expressed in the lantern, the most likely explanation is
+        structural rather than involvement in luciferin biosynthesis.
       </p>
 
       {/* -- PPYR_07361 ------------------------------------- */}
       <h3>
         <code>PPYR_07361</code>{" "}
-        <span className="ml-2 rounded-full bg-paper-dark px-2.5 py-0.5 font-mono text-[0.6875rem] text-secondary">
+        <span className="bg-paper-dark text-secondary ml-2 rounded-full px-2.5 py-0.5 font-mono text-[0.6875rem]">
           Discarded
         </span>
       </h3>
@@ -289,8 +287,8 @@ export function MiningFallonContent() {
       <p>My original (&ldquo;strict&rdquo;) filter was:</p>
 
       <div className="my-6 grid gap-4 sm:grid-cols-2">
-        <div className="rounded-lg border border-hairline bg-paper-dark p-4">
-          <p className="mb-2 font-mono text-[0.6875rem] uppercase tracking-wider text-secondary">
+        <div className="border-hairline bg-paper-dark rounded-lg border p-4">
+          <p className="text-secondary mb-2 font-mono text-[0.6875rem] tracking-wider uppercase">
             Strict filter
           </p>
           <ul className="m-0 space-y-1 p-0 text-sm">
@@ -298,12 +296,12 @@ export function MiningFallonContent() {
             <li>sleuth b &ge; 3 (&asymp; 8&times;)</li>
             <li>qval &le; 1e-10</li>
           </ul>
-          <p className="mt-3 font-mono text-xs text-secondary">
+          <p className="text-secondary mt-3 font-mono text-xs">
             15,773 &rarr; 41 genes &rarr; 18 enzymes
           </p>
         </div>
-        <div className="rounded-lg border border-accent/30 bg-accent-light p-4">
-          <p className="mb-2 font-mono text-[0.6875rem] uppercase tracking-wider text-accent">
+        <div className="border-accent/30 bg-accent-light rounded-lg border p-4">
+          <p className="text-accent mb-2 font-mono text-[0.6875rem] tracking-wider uppercase">
             Relaxed filter
           </p>
           <ul className="m-0 space-y-1 p-0 text-sm">
@@ -311,7 +309,7 @@ export function MiningFallonContent() {
             <li>sleuth b &ge; 2 (&asymp; 4&times;)</li>
             <li>qval &le; 0.001</li>
           </ul>
-          <p className="mt-3 font-mono text-xs text-secondary">
+          <p className="text-secondary mt-3 font-mono text-xs">
             15,773 &rarr; 117 genes &rarr; 94 enzymes (76 new)
           </p>
         </div>
@@ -369,7 +367,7 @@ export function MiningFallonContent() {
       {/* -- Deprioritized ---------------------------------- */}
       <h3>
         <code>PPYR_10049</code>{" "}
-        <span className="ml-2 rounded-full bg-paper-dark px-2.5 py-0.5 font-mono text-[0.6875rem] text-secondary">
+        <span className="bg-paper-dark text-secondary ml-2 rounded-full px-2.5 py-0.5 font-mono text-[0.6875rem]">
           Deprioritized
         </span>
       </h3>
@@ -385,7 +383,7 @@ export function MiningFallonContent() {
 
       <h3>
         <code>PPYR_03580</code>{" "}
-        <span className="ml-2 rounded-full bg-paper-dark px-2.5 py-0.5 font-mono text-[0.6875rem] text-secondary">
+        <span className="bg-paper-dark text-secondary ml-2 rounded-full px-2.5 py-0.5 font-mono text-[0.6875rem]">
           Deprioritized
         </span>
       </h3>
@@ -408,14 +406,14 @@ export function MiningFallonContent() {
         <strong>
           their BLAST hit distributions are skewed toward luminous beetles
         </strong>
-        , with much lower identity to non-luminous species&mdash;a pattern
-        consistent with lineage-specific evolution.
+        , with much lower identity to non-luminous species, a pattern consistent
+        with lineage-specific evolution.
       </p>
 
       {/* -- PPYR_14756 ------------------------------------- */}
       <h3>
         <code>PPYR_14756</code>{" "}
-        <span className="ml-2 rounded-full border border-accent/30 bg-accent-light px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium text-accent">
+        <span className="border-accent/30 bg-accent-light text-accent ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium">
           Candidate
         </span>
       </h3>
@@ -423,8 +421,8 @@ export function MiningFallonContent() {
       <p>
         The BLAST hit list is all luminous beetles (multiple fireflies +{" "}
         <em>Ignelater luminosus</em>), with no obvious non-luminous beetles
-        showing up. Sequence identity drops hard outside <em>Photinus</em>:
-        ~95% to self, then down to ~62% even in other fireflies, and into the
+        showing up. Sequence identity drops hard outside <em>Photinus</em>: ~95%
+        to self, then down to ~62% even in other fireflies, and into the
         ~45&ndash;63% range more broadly. That pattern is consistent with a
         lineage-restricted enzyme that&rsquo;s evolving fast.
       </p>
@@ -444,10 +442,42 @@ export function MiningFallonContent() {
         look like.
       </Callout>
 
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-14756-hmmer-domains.png"
+          alt="HMMER domain hits for PPYR_14756 showing UDP-glucoronosyl and UDP-glucosyl transferase (PF00201), Erythromycin biosynthesis protein CIII-like C-terminal domain (PF06722), and Glycosyltransferase family 28 C-terminal domain (PF04101)"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 1</span> &mdash; HMMER
+          domain architecture of PPYR_14756. Three domains detected: the core
+          UDPGT domain (PF00201, E-value 1.7e-65), an erythromycin biosynthesis
+          C-terminal domain (PF06722), and a glycosyltransferase family 28
+          C-terminal domain (PF04101). All belong to clan CL0113.
+        </figcaption>
+      </figure>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-14756-blast-hits.png"
+          alt="BLAST results for PPYR_14756 showing hits exclusively in luminous beetle species: Photinus pyralis, Pyrocoelia pectoralis, Aquatica leii, Lamprigera yunnana, Abscondita terminalis, and Ignelater luminosus"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 2</span> &mdash; BLAST hit
+          list for PPYR_14756. Every visible hit is a luminous beetle species.
+          Identity drops from 95% (self) to ~62% in other fireflies and
+          ~45&ndash;48% more broadly. No non-luminous beetles appear in the top
+          results.
+        </figcaption>
+      </figure>
+
       {/* -- PPYR_02911 ------------------------------------- */}
       <h3>
         <code>PPYR_02911</code>{" "}
-        <span className="ml-2 rounded-full border border-accent/30 bg-accent-light px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium text-accent">
+        <span className="border-accent/30 bg-accent-light text-accent ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium">
           Candidate
         </span>
       </h3>
@@ -458,53 +488,135 @@ export function MiningFallonContent() {
         (~74&ndash;96% identity, including the nearby duplicate{" "}
         <code>PPYR_02910</code>). Other fireflies: <em>Pyrocoelia</em> ~71.6%,{" "}
         <em>Aquatica</em> ~70.5%, <em>Abscondita</em> ~66.3%. Other luminous
-        beetles: <em>Ignelater luminosus</em> ~58&ndash;64%,{" "}
-        <em>Lamprigera</em> ~56&ndash;64%. The first clearly non-luminous beetle
-        is <em>Leptinotarsa decemlineata</em> at ~49%, far down the list.
+        beetles: <em>Ignelater luminosus</em> ~58&ndash;64%, <em>Lamprigera</em>{" "}
+        ~56&ndash;64%. The first clearly non-luminous beetle is{" "}
+        <em>Leptinotarsa decemlineata</em> at ~49%, far down the list.
       </p>
 
       <p>Two extra signals make this candidate worth keeping:</p>
 
       <ol>
         <li>
-          The top hits are overwhelmingly luminous species. Even if it isn&rsquo;t
-          perfectly exclusive, the distribution is strongly biased.
+          The top hits are overwhelmingly luminous species. Even if it
+          isn&rsquo;t perfectly exclusive, the distribution is strongly biased.
         </li>
         <li>
           There are multiple <em>Photinus</em> paralogs plus a nearby neighbor (
-          <code>PPYR_02910</code>), consistent with recent duplication&mdash;a
-          common signature of genes that get recruited and specialized into
-          pathway roles.
+          <code>PPYR_02910</code>), consistent with recent duplication, a common
+          signature of genes that get recruited and specialized into pathway
+          roles.
         </li>
       </ol>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-02911-hmmer-domains.png"
+          alt="HMMER domain hit for PPYR_02911 showing a single Cytochrome P450 domain (PF00067) spanning positions 49 to 542"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 3</span> &mdash; HMMER
+          domain architecture of PPYR_02911. A single Cytochrome P450 domain
+          (PF00067) spans nearly the entire protein (positions 49&ndash;542),
+          with strong E-values (independent: 1.4e-73, conditional: 5.8e-78).
+        </figcaption>
+      </figure>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-02911-blast-hits.png"
+          alt="BLAST results for PPYR_02911 showing top hits dominated by luminous beetle species, with the first non-luminous beetle (Leptinotarsa decemlineata) appearing far down the list at ~49% identity"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 4</span> &mdash; BLAST hit
+          list for PPYR_02911. Top hits are dominated by <em>Photinus</em> CYP4C
+          paralogs (74&ndash;96%), followed by other luminous beetles
+          (58&ndash;72%). The first non-luminous beetle (
+          <em>Leptinotarsa decemlineata</em>) appears near the bottom at ~49%
+          identity.
+        </figcaption>
+      </figure>
+
+      {/* -- PPYR_02910 ------------------------------------- */}
+      <h3>
+        <code>PPYR_02910</code>{" "}
+        <span className="border-accent/30 bg-accent-light text-accent ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium">
+          Candidate
+        </span>
+      </h3>
+
+      <p>
+        <code>PPYR_02910</code> shows the same overall pattern as{" "}
+        <code>PPYR_02911</code>: the top BLAST hits are almost entirely luminous
+        beetles, with the first clearly non-luminous species (
+        <em>Leptinotarsa</em>) appearing much further down at ~51.9% identity.{" "}
+        <code>PPYR_02911</code> also appears as a top hit to{" "}
+        <code>PPYR_02910</code> (~87.1%), confirming that the two genes are
+        closely related tandem paralogs located next to each other on chromosome
+        LG10.
+      </p>
+
+      <p>
+        Together with the presence of multiple CYP4C1-like copies in{" "}
+        <em>Photinus</em> (74&ndash;95% identity), this points to a locally
+        expanded CYP4C P450 gene cluster that has duplicated and diversified
+        within fireflies, with homologs present but more diverged in
+        non-luminous beetles.
+      </p>
+
+      <p>
+        Because <code>PPYR_02910</code> shares ~87% sequence identity with{" "}
+        <code>PPYR_02911</code>, a separate HMMER analysis is unnecessary, at
+        that level of similarity the two proteins share the same domain
+        architecture (a single Cytochrome P450 domain, PF00067) and would
+        produce essentially identical results.
+      </p>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-02910-blast-hits.png"
+          alt="BLAST results for PPYR_02910 showing top hits dominated by luminous beetle species including Photinus pyralis CYP4C paralogs and PPYR_02911 at 87.11% identity, with the first non-luminous beetle Leptinotarsa decemlineata at ~51.9% identity"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 5</span> &mdash; BLAST hit
+          list for PPYR_02910. The tandem paralog <code>PPYR_02911</code>{" "}
+          appears at 87.1% identity, confirming their close relationship. Top
+          hits are overwhelmingly luminous beetles (64&ndash;95%), with{" "}
+          <em>Leptinotarsa decemlineata</em> as the first non-luminous species
+          at ~51.9%.
+        </figcaption>
+      </figure>
 
       {/* -- PPYR_14056 ------------------------------------- */}
       <h3>
         <code>PPYR_14056</code>{" "}
-        <span className="ml-2 rounded-full border border-accent/30 bg-accent-light px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium text-accent">
+        <span className="border-accent/30 bg-accent-light text-accent ml-2 rounded-full border px-2.5 py-0.5 font-mono text-[0.6875rem] font-medium">
           Candidate
         </span>
       </h3>
 
       <p>
         Annotated as <strong>4-coumarate&ndash;CoA ligase 1-like</strong>. The
-        BLAST distribution is striking: the visible hits are all luminous beetles
-        (<em>Photinus</em>, <em>Aquatica</em>, <em>Abscondita</em>,{" "}
+        BLAST distribution is striking: the visible hits are all luminous
+        beetles (<em>Photinus</em>, <em>Aquatica</em>, <em>Abscondita</em>,{" "}
         <em>Pyrocoelia</em>, <em>Lamprigera</em>, <em>Ignelater</em>), with no
         obvious non-luminous beetles showing up. On top of that, the family
-        looks massively expanded&mdash;<em>Photinus</em> alone has ~8&ndash;10
+        looks massively expanded, <em>Photinus</em> alone has ~8&ndash;10
         paralogs. That combination (luminous-only skew + big local expansion) is
         a classic signature of a lineage-specialized pathway module.
       </p>
 
       <p>
         Mechanistically, the annotation makes sense. 4CL enzymes are
-        adenylate-forming enzymes: they activate aromatic acids by forming an AMP
-        intermediate, then often proceed to CoA thioester formation.{" "}
-        <strong>
-          That&rsquo;s the same core chemistry luciferase uses
-        </strong>
-        , and luciferase is known to have evolved from this broader
+        adenylate-forming enzymes: they activate aromatic acids by forming an
+        AMP intermediate, then often proceed to CoA thioester formation.{" "}
+        <strong>That&rsquo;s the same core chemistry luciferase uses</strong>,
+        and luciferase is known to have evolved from this broader
         adenylate-forming enzyme superfamily. The domain confirmation shows:
       </p>
 
@@ -518,15 +630,49 @@ export function MiningFallonContent() {
         synthetase&rdquo; architecture. With this many paralogs in luminous
         beetles, it&rsquo;s very plausible the cluster contains a mix of
         functions: some true luciferases, and others that activate aromatic
-        precursors upstream and feed them into luciferin biosynthesis rather than
-        emitting light directly.
+        precursors upstream and feed them into luciferin biosynthesis rather
+        than emitting light directly.
       </p>
 
       <MarginNote>
         <code>PPYR_14056</code> is already in the literature as a pathway
-        candidate, discussed in Zhang (2020). The other three candidates are
+        candidate, discussed in Zhang (2020). The other four candidates are
         novel.
       </MarginNote>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-14056-hmmer-domains.png"
+          alt="HMMER domain hits for PPYR_14056 showing AMP-binding enzyme domain (PF00501) spanning positions 24 to 397 and AMP-binding enzyme C-terminal domain (PF13193) spanning positions 446 to 524"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 6</span> &mdash; HMMER
+          domain architecture of PPYR_14056. Two domains detected: AMP-binding
+          enzyme (PF00501, E-value 1.1e-46) and AMP-binding enzyme C-terminal
+          domain (PF13193, E-value 1.4e-13)&mdash;the same architecture shared
+          by luciferase, 4-coumarate&ndash;CoA ligases, and acyl-CoA
+          synthetases.
+        </figcaption>
+      </figure>
+
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/ppyr-14056-blast-hits.png"
+          alt="BLAST results for PPYR_14056 showing hits exclusively in luminous beetle species including Photinus pyralis, Lamprigera yunnana, Abscondita terminalis, Aquatica leii, and Ignelater luminosus, with massive paralog expansion in Photinus"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 7</span> &mdash; BLAST hit
+          list for PPYR_14056. Every visible hit is a luminous beetle species.{" "}
+          <em>Photinus</em> alone has ~8&ndash;10 4-coumarate&ndash;CoA ligase
+          paralogs (39&ndash;97% identity), and the family is also expanded in{" "}
+          <em>Aquatica</em>, <em>Lamprigera</em>, and <em>Ignelater</em>. No
+          non-luminous beetles appear in the top results.
+        </figcaption>
+      </figure>
 
       {/* -------------------------------------------------- */}
       <h2>Sanity-checking the BLAST pattern</h2>
@@ -579,10 +725,9 @@ export function MiningFallonContent() {
         However, there&rsquo;s still an interesting pattern in the identity
         values. Homologs from luminous beetles are much more similar to the{" "}
         <em>Photinus</em> CYP4C cluster (~73&ndash;77%) than the first
-        non-luminous beetle tested (~51&ndash;54%), and <em>Photinus</em>{" "}
-        itself contains multiple tandem duplicates in this region. Taken
-        together, this suggests the CYP4C family is broadly conserved, but has
-        undergone{" "}
+        non-luminous beetle tested (~51&ndash;54%), and <em>Photinus</em> itself
+        contains multiple tandem duplicates in this region. Taken together, this
+        suggests the CYP4C family is broadly conserved, but has undergone{" "}
         <strong>
           lineage-specific expansion and divergence in luminous beetles
         </strong>
@@ -631,13 +776,12 @@ export function MiningFallonContent() {
       <Callout label="Evolutionary picture">
         CYP4C genes exist across beetles, but in luminous beetles they form a
         tighter, expanded clade, and <em>Photinus</em> shows additional recent
-        duplications within that group. This is consistent with
-        lineage-specific expansion and functional divergence in fireflies. It
-        does not prove these enzymes make luciferin, but the
-        pattern&mdash;duplication, divergence, and lantern
-        expression&mdash;is exactly what you&rsquo;d expect to see in genes
-        that have been recruited and specialized as part of a new biochemical
-        trait.
+        duplications within that group. This is consistent with lineage-specific
+        expansion and functional divergence in fireflies. It does not prove
+        these enzymes make luciferin, but the pattern&mdash;duplication,
+        divergence, and lantern expression&mdash;is exactly what you&rsquo;d
+        expect to see in genes that have been recruited and specialized as part
+        of a new biochemical trait.
       </Callout>
 
       {/* -------------------------------------------------- */}
@@ -650,13 +794,27 @@ export function MiningFallonContent() {
         with cysteine to produce luciferin.
       </p>
 
+      <figure className="figure-wide my-8">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/images/zhang-2020-luciferin-pathway.png"
+          alt="Zhang et al. 2020 proposed luciferin biosynthesis pathway showing the steps from Tyrosine through TAT, HPPD, PO, 4CL, ABC-D transporter, ScpX, cysteine additions, ACOT1, and finally luciferase producing light"
+          className="border-hairline w-full rounded-md border"
+        />
+        <figcaption className="text-secondary mt-3 px-8 text-center text-sm leading-relaxed">
+          <span className="font-mono text-xs">Figure 8</span> &mdash; Zhang et
+          al. (2020) proposed luciferin biosynthesis pathway. PPYR_14056 sits at
+          the 4CL (4-coumarate&ndash;CoA ligase) step. The two cysteine
+          additions may occur spontaneously without dedicated enzymes.
+        </figcaption>
+      </figure>
+
       <p>
         Most of the early steps (TAT, HPPD) are standard metabolism and well
-        understood. The uncertainty begins in the middle of the
-        pathway&mdash;especially around how benzoquinone is generated, how
-        it&rsquo;s activated and transported, and how reactive intermediates are
-        handled safely.{" "}
-        <strong>That&rsquo;s where my candidate genes sit.</strong>
+        understood. The uncertainty begins in the middle of the pathway,
+        especially around how benzoquinone is generated, how it&rsquo;s
+        activated and transported, and how reactive intermediates are handled
+        safely. That&rsquo;s where my candidate genes sit.
       </p>
 
       <h3>The key insight from newer work</h3>
@@ -671,11 +829,8 @@ export function MiningFallonContent() {
 
       <p>
         If that&rsquo;s true, then the real biological problem isn&rsquo;t
-        &ldquo;how do you close the ring?&rdquo; It&rsquo;s:{" "}
-        <strong>
-          How does the lantern reliably produce, control, and localize the
-          quinone precursor?
-        </strong>
+        &ldquo;how do you close the ring?&rdquo; It&rsquo;s: How does the
+        lantern reliably produce, control, and localize the quinone precursor?
       </p>
 
       <p>

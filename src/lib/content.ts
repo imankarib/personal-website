@@ -3,7 +3,7 @@
    ============================================ */
 
 export type PostType = "lab-note" | "deep-dive" | "project";
-export type Confidence = "validated" | "hypothesis" | "speculative";
+export type Confidence = "validated" | "hypothesis" | "speculative" | "refuted";
 
 export interface Post {
   slug: string;
@@ -110,57 +110,32 @@ export const labNotes: Post[] = [
 
 export const deepDives: Post[] = [
   {
+    slug: "copper-oxidase-wrong-protein",
+    title:
+      "Investigating a Copper Oxidase That Turned Out to Be the Wrong Protein",
+    deck: "How PPYR_12315 looked like the perfect luciferin synthase candidate, until HMMER revealed it was a lysyl oxidase all along. In other words, my first enzyme deepdive",
+    date: "2026-02-13",
+    readingTime: "12 min",
+    tags: ["Bioluminescence", "Bioinformatics", "Luciferin", "Genomics"],
+    type: "deep-dive",
+    confidence: "refuted",
+    featured: false,
+    excerpt:
+      "I found a copper oxidase (PPYR_12315) with 100x higher expression in the firefly lantern than any other copper-binding enzyme. AlphaFold structures, electrostatic mapping, and cross-species conservation all seemed to support it as the missing luciferin synthase. Then HMMER profile analysis revealed it was a lysyl oxidase\u2014a completely different enzyme family. A lesson in confirmation bias and why motif-level analysis is not enough.",
+  },
+  {
     slug: "mining-fallon-luciferin-pathway",
     title:
       "Mining Fallon et al. for Luciferin Pathway Candidates in Photinus pyralis",
-    deck: "Filtering 15,773 firefly genes down to four candidate enzymes that may be involved in luciferin biosynthesis.",
+    deck: "Filtering 15,773 firefly genes down to five candidate enzymes that may be involved in luciferin biosynthesis.",
     date: "2026-02-15",
     readingTime: "22 min",
     tags: ["Bioluminescence", "Bioinformatics", "Luciferin", "Genomics"],
     type: "deep-dive",
-    confidence: "hypothesis",
+    confidence: "speculative",
     featured: true,
     excerpt:
-      "I took the differential expression data from Fallon et al. (2018) and applied two layers of filtering\u2014expression enrichment and enzyme annotation\u2014to reduce the Photinus pyralis genome from 15,773 genes to a manageable set of luciferin biosynthesis candidates. After cross-species BLAST analysis, phylogenetics, and manual review, three novel candidates and one known candidate emerged.",
-  },
-  {
-    slug: "crispr-for-beginners",
-    title: "CRISPR for Beginners: What I Wish I Knew",
-    deck: "A first-principles explanation of CRISPR-Cas9, written while I was still learning it.",
-    date: "2024-02-25",
-    readingTime: "14 min",
-    tags: ["CRISPR", "Gene Editing", "Fundamentals"],
-    type: "deep-dive",
-    confidence: "validated",
-    featured: true,
-    excerpt:
-      "Everyone talks about CRISPR, but most explanations skip the parts that confused me most. This is my attempt at explaining it from scratch—the guide RNA, the PAM sequence, the double-strand break, and what happens after.",
-  },
-  {
-    slug: "central-dogma-explained",
-    title: "The Central Dogma, Actually Explained",
-    deck: "DNA \u2192 RNA \u2192 Protein, and all the nuance that simple arrow hides.",
-    date: "2024-03-05",
-    readingTime: "11 min",
-    tags: ["Molecular Biology", "Fundamentals", "DNA"],
-    type: "deep-dive",
-    confidence: "validated",
-    featured: false,
-    excerpt:
-      "The central dogma is the first thing you learn in molecular biology, and the last thing you truly understand. Here's my attempt at doing justice to the complexity hiding behind three simple arrows.",
-  },
-  {
-    slug: "restriction-enzymes-explained",
-    title: "How Restriction Enzymes Work (With Diagrams)",
-    deck: "The molecular scissors that launched genetic engineering, explained step by step.",
-    date: "2024-03-15",
-    readingTime: "9 min",
-    tags: ["Enzymes", "Cloning", "Techniques"],
-    type: "deep-dive",
-    confidence: "validated",
-    featured: false,
-    excerpt:
-      "Restriction enzymes are one of the most elegant tools in molecular biology. I break down how they recognize DNA sequences, cut with precision, and why sticky ends changed everything.",
+      "I took the differential expression data from Fallon et al. (2018) and applied two layers of filtering\u2014expression enrichment and enzyme annotation\u2014to reduce the Photinus pyralis genome from 15,773 genes to a manageable set of luciferin biosynthesis candidates. After cross-species BLAST analysis, phylogenetics, and manual review, four novel candidates and one known candidate emerged.",
   },
 ];
 
@@ -177,10 +152,18 @@ export const projects: Project[] = [
     tags: ["Research", "Bioinformatics", "Bioluminescence"],
     milestones: [
       {
+        title: "Investigated copper oxidase PPYR_12315 (refuted)",
+        date: "2026-02-13",
+        description:
+          "Identified PPYR_12315 as a highly expressed copper oxidase in the firefly lantern. After AlphaFold analysis, substrate fitting, and cross-species BLAST, HMMER profile analysis revealed it was a lysyl oxidase (LOXL2), not a laccase. Hypothesis refuted.",
+        linkedHref: "/deep-dives/copper-oxidase-wrong-protein",
+        linkedLabel: "Read the full investigation",
+      },
+      {
         title: "Mining Fallon et al. for luciferin pathway candidates",
         date: "2026-02-15",
         description:
-          "Applied two-layer filtering (expression + enzyme annotation) to Fallon's differential expression data, reducing 15,773 genes to 18 enzyme candidates. After manual review, cross-species BLAST, and phylogenetic analysis, identified three novel candidates (PPYR_14756, PPYR_02911, PPYR_14056) for luciferin biosynthesis.",
+          "Applied two-layer filtering (expression + enzyme annotation) to Fallon's differential expression data, reducing 15,773 genes to 18 enzyme candidates. After manual review, cross-species BLAST, and phylogenetic analysis, identified four novel candidates (PPYR_14756, PPYR_02911, PPYR_02910, PPYR_14056) for luciferin biosynthesis.",
         linkedHref: "/deep-dives/mining-fallon-luciferin-pathway",
         linkedLabel: "Read the full deep dive",
       },

@@ -16,6 +16,10 @@ const config: Record<
     label: "Speculative",
     className: "border-hairline text-secondary/70",
   },
+  refuted: {
+    label: "Refuted",
+    className: "border-red-400 text-red-500 dark:border-red-500 dark:text-red-400",
+  },
 };
 
 export function ConfidenceBadge({ level }: { level: Confidence }) {
@@ -30,7 +34,9 @@ export function ConfidenceBadge({ level }: { level: Confidence }) {
             ? "bg-accent"
             : level === "hypothesis"
               ? "bg-secondary"
-              : "bg-hairline"
+              : level === "refuted"
+                ? "bg-red-500"
+                : "bg-hairline"
         }`}
       />
       {label}

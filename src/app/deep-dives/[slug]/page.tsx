@@ -5,6 +5,7 @@ import { PostHeader } from "~/components/ui/PostHeader";
 import { ArticleWithMargins, MarginNote } from "~/components/ui/MarginNote";
 import { Callout } from "~/components/ui/Callout";
 import { MiningFallonContent } from "~/components/deep-dives/MiningFallonContent";
+import { CopperOxidaseContent } from "~/components/deep-dives/CopperOxidaseContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -27,6 +28,7 @@ export function generateStaticParams() {
 /* Map slugs to custom content components */
 const contentRegistry: Record<string, React.ComponentType> = {
   "mining-fallon-luciferin-pathway": MiningFallonContent,
+  "copper-oxidase-wrong-protein": CopperOxidaseContent,
 };
 
 export default async function DeepDivePage({ params }: Props) {
