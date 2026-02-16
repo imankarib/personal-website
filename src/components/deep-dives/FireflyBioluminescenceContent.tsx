@@ -185,6 +185,19 @@ export function FireflyBioluminescenceContent() {
         for engineering efforts, since the precursors already exist in plants.
       </p>
 
+      <h4>Hydroquinone &rarr; quinone (activation step)</h4>
+
+      <p>
+        Before cysteine can attach, hydroquinone must be oxidized into its
+        reactive quinone form. Quinones are much more chemically reactive than
+        hydroquinones and readily participate in the condensation reactions that
+        begin building the luciferin scaffold. This oxidation can occur
+        spontaneously in air, but in living systems it is likely assisted by
+        oxidase enzymes. This is the step that produces the electrophilic
+        quinone that allows cysteine to attack and begin forming the
+        benzothiazole core.
+      </p>
+
       <figure className="my-8">
         <img
           src="/images/condensation-overview.png"
@@ -820,6 +833,367 @@ export function FireflyBioluminescenceContent() {
         production, spatial organization could be an important factor in
         achieving visible glow.
       </p>
+
+      {/* -------------------------------------------------- */}
+      <h2>The other glowing plant: why not use the mushroom system?</h2>
+
+      <p>
+        There is already a glowing plant on the market. In 2020, Mitiouchkina et
+        al. demonstrated autonomously bioluminescent tobacco using the fungal
+        bioluminescence pathway from <em>Neonothopanus nambi</em>, and the
+        company Light Bio now sells a glowing petunia commercially. That system
+        works by tapping into caffeic acid, a metabolite plants already produce
+        abundantly, and converting it through a four-enzyme pathway into a
+        fungal luciferin that emits green light.
+      </p>
+
+      <p>So why not just use that?</p>
+
+      <p>
+        The firefly system is fundamentally brighter. Firefly bioluminescence
+        has a quantum yield of roughly 41%, meaning 41 out of every 100
+        reactions produce a photon. That is the highest of any known
+        bioluminescence system. The fungal system is significantly lower. On a
+        per-reaction basis, firefly chemistry converts more energy into light
+        and less into heat.
+      </p>
+
+      <p>
+        The emission wavelength also matters. Firefly luciferase emits at
+        ~560&nbsp;nm, which sits near the peak of human dark-adapted vision. The
+        fungal system emits a dimmer, greener light. In practice, Light
+        Bio&rsquo;s Firefly Petunia produces what&rsquo;s been described as a
+        gentle glow comparable to moonlight; visible in a dark room, but not
+        dramatically so, and most promotional photos use long camera exposures.
+      </p>
+
+      <p>
+        The firefly pathway is harder to engineer. The substrate problem that
+        this entire blog post describes is real and unsolved. But if it works,
+        the theoretical brightness ceiling is higher. That&rsquo;s the bet: a
+        harder engineering challenge in exchange for a brighter result.
+      </p>
+
+      {/* ================================================== */}
+      <div className="my-20 text-center">
+        <hr className="border-hairline mb-10" />
+        <p className="text-secondary font-mono text-xs font-medium tracking-[0.2em] uppercase">
+          Part II
+        </p>
+        <h2 className="mt-2 text-4xl font-bold tracking-tight">
+          Plant Engineering
+        </h2>
+        <p className="text-secondary mt-3 text-lg">
+          Everything above describes the biology as it exists in fireflies.
+          <br />
+          What follows is about recreating it in plants.
+        </p>
+        <hr className="border-hairline mt-10" />
+      </div>
+
+      {/* -------------------------------------------------- */}
+      <h2>The engineering plan: four genes to close a 40-year gap</h2>
+
+      <p>
+        Since Keith Wood showed in 1986 that plants expressing firefly
+        luciferase glow when watered with luciferin, the goal has been obvious:
+        make the plant produce its own luciferin so it can glow autonomously.
+        That requires giving the plant the enzymatic machinery for the
+        biosynthetic pathway described above.
+      </p>
+
+      <p>
+        Plants already have most of what they need. They make quinones and
+        hydroquinones through normal metabolism. They have abundant L-cysteine.
+        They have ATP, O₂, Mg&sup2;⁺, and functioning peroxisomes with a
+        conserved PTS1 import system. What they&rsquo;re missing are the
+        specific enzymes that channel those precursors into luciferin and then
+        into light.
+      </p>
+
+      <p>My project aims to supply those missing pieces with four genes:</p>
+
+      <figure className="my-8">
+        <img
+          src="/images/plant-vs-added-genes.png"
+          alt="Side-by-side comparison: what the plant already has (arbutin, L-cysteine, ATP, O₂, Mg²⁺, peroxisomes, PTS1, CoA + NADPH) versus what we add (four genes: BGL, Laccase, ACOT1, Luciferase)"
+          className="border-hairline w-full rounded border"
+        />
+        <figcaption className="text-secondary mt-2 text-center text-sm">
+          What the plant already provides versus the four genes we engineer in.
+        </figcaption>
+      </figure>
+
+      {/* -------------------------------------------------- */}
+      <h3>1. BGL (&beta;-glucosidase)</h3>
+      <p className="text-secondary font-mono text-xs font-medium tracking-wider uppercase">
+        Role: Release the precursor from storage
+      </p>
+
+      <p>
+        As described in the biosynthesis section, the hydroquinone/quinone
+        precursor is proposed to be stored as arbutin (hydroquinone locked
+        behind a glucose molecule in a safe, less reactive glycoside form). BGL
+        cleaves that glucose off, releasing free hydroquinone into the pathway.
+        Certain species have natural arbutin stores, and plant-engineering
+        studies have also built hydroquinone supply routes in hosts that do not.
+        This step can act as a key gate for pathway flux: without effective
+        &beta;-glucosidase activity, much of the precursor remains sequestered
+        and downstream conversion is strongly limited. Plants do have endogenous
+        &beta;-glucosidases, but a firefly-derived BGL helps ensure the needed
+        substrate specificity and expression level.
+      </p>
+
+      <p>
+        A plant is very likely to successfully express a &beta;-glucosidase
+        (BGL) gene, because plants already produce many similar enzymes and
+        generally tolerate them well. The main uncertainty is not expression but
+        usefulness. BGL will only help if the plant actually contains arbutin or
+        related glycosides to release hydroquinone from. If that precursor pool
+        is present and accessible, BGL can act as a gate that increases pathway
+        flux. If little or no arbutin exists in the host species, the enzyme may
+        have minimal effect. So the biological acceptance risk is low, but the
+        impact depends heavily on the plant&rsquo;s existing chemistry.
+      </p>
+
+      {/* -------------------------------------------------- */}
+      <h3>2. Laccase</h3>
+      <p className="text-secondary font-mono text-xs font-medium tracking-wider uppercase">
+        Role: Oxidize hydroquinone to the reactive quinone
+      </p>
+
+      <p>
+        Free hydroquinone likely needs to be oxidized to p-benzoquinone before
+        it can condense with cysteine. Laccases (copper-containing oxidase
+        enzymes) are strong candidates to carry out this conversion. This same
+        enzyme class has been shown to enhance luciferin-forming chemistry in
+        vitro (Viviani 2022), suggesting it could play a dual role: generating
+        the quinone and promoting the initial condensation step. Plants already
+        contain many endogenous laccases, but including a pathway-specific
+        laccase helps ensure sufficient and reliable oxidation of the precursor.
+      </p>
+
+      <p>
+        A plant is very likely to tolerate and express a laccase, since plants
+        already have large native laccase families and are used to this type of
+        enzyme. The main uncertainty is functional, not biological. Laccases
+        oxidize many phenolic molecules, not just hydroquinone, so they could
+        help generate the needed quinone precursor but might also oxidize other
+        plant compounds or act in the wrong compartment. Overall, expression
+        risk is low; usefulness depends on localization and how much precursor
+        is present.
+      </p>
+
+      {/* -------------------------------------------------- */}
+      <h3>3. ACOT1 (acyl-CoA thioesterase)</h3>
+      <p className="text-secondary font-mono text-xs font-medium tracking-wider uppercase">
+        Role: Help complete the deracemization cycle
+      </p>
+
+      <p>
+        This enzyme is intended to close the stereochemical inversion loop. As
+        described in the deracemization section, luciferase can divert
+        L-luciferin into L-luciferyl-CoA, which can spontaneously epimerize to
+        D-luciferyl-CoA. However, this CoA-bound form cannot participate in the
+        light reaction until the CoA group is removed.
+      </p>
+
+      <p>
+        ACOT-type thioesterases are strong candidates for this step. They cleave
+        CoA thioesters to release the free acid, which in this case would
+        regenerate free D-luciferin. If this hydrolysis step is inefficient, the
+        cycle could become trapped in CoA-bound intermediates, limiting the
+        amount of usable D-luciferin and reducing light output over time.
+      </p>
+
+      <p>
+        ACOT1 is therefore included as a practical way to ensure that any
+        D-luciferyl-CoA formed is converted back into free D-luciferin. It may
+        be the least glamorous gene in the cassette, but it could be important
+        for sustaining continuous light production.
+      </p>
+
+      <p>
+        Biologically, the risks to the integrity of the plant are low. Plants
+        already have many native acyl-CoA thioesterases and regularly handle
+        CoA-bound intermediates, so expressing an additional ACOT-type enzyme is
+        unlikely to be toxic or disruptive on its own. It doesn&rsquo;t consume
+        much energy, doesn&rsquo;t create reactive byproducts, and acts on small
+        molecules the cell is used to processing.
+      </p>
+
+      <p>
+        The main uncertainty is not plant health but usefulness. It&rsquo;s
+        still unclear how much the luciferin pathway actually depends on the CoA
+        deracemization loop, and plants may already have endogenous
+        thioesterases that can perform the same function. So ACOT1 is unlikely
+        to harm the plant, but its impact on light output could range from
+        essential to redundant depending on how the pathway behaves in practice.
+      </p>
+
+      {/* -------------------------------------------------- */}
+      <h3>
+        4. Wild-type <em>Photinus pyralis</em> luciferase
+      </h3>
+      <p className="text-secondary font-mono text-xs font-medium tracking-wider uppercase">
+        Role: The light reaction itself
+      </p>
+
+      <p>
+        Wild-type <em>Photinus pyralis</em> luciferase is the best fit for a
+        plant engineered to produce its own D-luciferin because it is naturally
+        optimized for that exact substrate. Unlike engineered variants such as
+        AkaLuc, which were designed for synthetic luciferins and perform worse
+        with native D-luciferin, the original enzyme efficiently converts
+        D-luciferin into light. It has a very high quantum yield, emits
+        yellow-green light (~560 nm) near the peak sensitivity of human night
+        vision, and already contains a built-in peroxisomal targeting signal
+        (&ndash;SKL) that correctly localizes it inside eukaryotic cells. It is
+        also widely used, well-characterized, and free of licensing
+        restrictions. For a system built around endogenous D-luciferin
+        production, it&rsquo;s not a fallback option, it&rsquo;s the most
+        compatible and practical choice.
+      </p>
+
+      {/* -------------------------------------------------- */}
+      <h3>The honest picture: a minimum viable pathway</h3>
+
+      <p>
+        These four genes represent a minimum viable pathway. The smallest gene
+        set that could, in principle, produce autonomous bioluminescence. The
+        logic is:
+      </p>
+
+      <p>
+        BGL and laccase supply the reactive quinone from stored precursors. The
+        condensation with cysteine may proceed spontaneously or with laccase
+        assistance (it works non-enzymatically in vitro, albeit at low yield).
+        The benzothiazoline-to-benzothiazole oxidation may happen through air
+        oxidation, since the molecule thermodynamically wants to become
+        aromatic. ACOT1 closes the deracemization loop, and wild-type luciferase
+        handles the light reaction.
+      </p>
+
+      <p>
+        But this is a hypothesis, not a guarantee. The pathway may be missing
+        pieces. Candidates for additional genes include a dedicated condensase
+        for the quinone-cysteine reaction (no one has identified one, but the
+        low non-enzymatic yield suggests one may exist), a hydroxylase such as
+        PPYR_02911 if the 6-OH isn&rsquo;t inherited from the quinone precursor,
+        and possibly a dedicated oxidase for the aromatization step.
+      </p>
+
+      <p>
+        If the four-gene plant glows, that&rsquo;s a significant result. It
+        would suggest that the minimal pathway is sufficient. If it
+        doesn&rsquo;t, the debugging process is still scientifically valuable.
+        Each failure point helps narrow the search for missing enzymes and
+        clarifies how the natural system actually works.
+      </p>
+
+      <p>
+        Either outcome advances understanding. That&rsquo;s what makes this a
+        real experiment rather than just an engineering exercise.
+      </p>
+
+      <figure className="my-8">
+        <img
+          src="/images/four-gene-pathway-overview.png"
+          alt="Complete four-gene pathway flowchart: Arbutin → BGL → Hydroquinone → Laccase → p-Benzoquinone → condensation with L-Cysteine → L-Luciferin → deracemization via ACOT1 → D-Luciferin → Luciferase → Light. Shows comparison between Keith Wood 1986 (luciferase only, external luciferin) and this project 2025–2026 (full autonomous pathway)."
+          className="border-hairline w-full rounded border"
+        />
+        <figcaption className="text-secondary mt-2 text-center text-sm">
+          The complete four-gene pathway from stored arbutin to light, compared
+          with Keith Wood&rsquo;s 1986 single-gene approach.
+        </figcaption>
+      </figure>
+
+      {/* ================================================== */}
+      <section className="border-hairline bg-paper-dark mt-20 rounded-lg border border-dashed px-6 py-8">
+        <p className="text-secondary font-mono text-[10px] font-medium tracking-[0.2em] uppercase">
+          Living section &middot; Last updated Feb 2026
+        </p>
+        <h2 className="mt-2 mb-1">
+          Candidates from the lantern: genes that could complete the pathway
+        </h2>
+        <p className="text-secondary mb-6 text-sm italic">
+          My four-gene system is designed as a minimum viable pathway, but the
+          firefly almost certainly uses additional enzymes that haven&rsquo;t
+          all been identified. This section will evolve alongside the
+          experiments, with new candidate genes added as stronger evidence
+          emerges.
+        </p>
+
+        <hr className="border-hairline mb-6" />
+
+        <div className="space-y-6">
+          {/* --- Candidate 1 --- */}
+          <div>
+            <h3 className="text-base">
+              PPYR_02911{" "}
+              <span className="text-secondary text-sm font-normal">
+                Cytochrome P450, CYP4C family
+              </span>
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed">
+              My top current candidate. It shows a lantern TPM of 534, is
+              21&times; upregulated, and has the most statistically significant
+              differential expression of the group (q&nbsp;=&nbsp;8.45e-20). It
+              sits in a tandem duplication with PPYR_02910. The two genes are
+              87% identical and only 4&nbsp;kb apart, a classic signature of
+              gene neofunctionalization, where one copy evolves a new function
+              while the other maintains the original role. BLAST results are
+              also striking: the closest matches are almost exclusively from
+              bioluminescent species, with the first non-luminous beetle
+              appearing only around 49% identity. This expression and
+              evolutionary profile is consistent with an enzyme that may have
+              specialized for the bioluminescence system. A plausible role is
+              hydroxylation of the benzothiazole ring at the 6-position, if that
+              oxygen is not inherited directly from the quinone precursor. To my
+              knowledge, this gene has not been widely discussed as a
+              luciferin-pathway candidate.
+            </p>
+          </div>
+
+          {/* --- Candidate 2 --- */}
+          <div>
+            <h3 className="text-base">
+              PPYR_14056{" "}
+              <span className="text-secondary text-sm font-normal">
+                4-Coumarate:CoA ligase
+              </span>
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed">
+              Previously proposed by Zhang et al. (2020) as a candidate. It
+              shows strong lantern enrichment and has chemistry consistent with
+              CoA-linked activation steps. This could connect to the proposed
+              deracemization loop or to broader CoA-mediated processing of
+              aromatic precursors, potentially interacting with peroxisomal
+              metabolism.
+            </p>
+          </div>
+
+          {/* --- Candidate 3 --- */}
+          <div>
+            <h3 className="text-base">
+              PPYR_14756{" "}
+              <span className="text-secondary text-sm font-normal">
+                UDP-glycosyltransferase
+              </span>
+            </h3>
+            <p className="mt-1 text-sm leading-relaxed">
+              The strongest statistical signal of the group
+              (q&nbsp;=&nbsp;2.45e-24). This enzyme is more likely to serve a
+              support or regulatory role than a core biosynthetic one.
+              Glycosyltransferases often convert reactive small molecules into
+              stable storage forms, similar to how hydroquinone can be stored as
+              arbutin. This gene could be involved in temporarily glycosylating
+              luciferin or its precursors to control availability and reduce
+              toxicity.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

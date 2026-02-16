@@ -118,23 +118,6 @@ export default function AboutPage() {
             <span className="arrow-slide text-sm">&rarr;</span>
           </a>
         </div>
-        <div className="mt-6 flex flex-wrap items-center gap-4">
-          <Link
-            href="/start-here"
-            className="text-accent decoration-accent/40 hover:decoration-accent inline-flex items-center gap-1.5 text-[0.9375rem] font-medium underline decoration-1 underline-offset-[3px] transition-all"
-          >
-            Start here
-            <span className="arrow-slide text-sm">&rarr;</span>
-          </Link>
-          <span className="text-hairline">&middot;</span>
-          <Link
-            href="/lab-notes"
-            className="text-accent decoration-accent/40 hover:decoration-accent inline-flex items-center gap-1.5 text-[0.9375rem] font-medium underline decoration-1 underline-offset-[3px] transition-all"
-          >
-            Read my lab notes
-            <span className="arrow-slide text-sm">&rarr;</span>
-          </Link>
-        </div>
       </section>
     </div>
   );
