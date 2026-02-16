@@ -177,7 +177,7 @@ export const projects: Project[] = [
       "The ultimate goal of my synthetic biology work: making plants that glow autonomously. This project takes the candidate genes identified in the Missing Enzyme Hunt and engineers them into a functional bioluminescent pathway in N. benthamiana. Starting with known components like firefly luciferase and working up to the full four gene pathway with BGL, Laccase, ACOT1, and AkaLuc, all targeted to the peroxisome for autonomous luciferin production.",
     status: "active",
     tags: ["Bioluminescence", "Plant Biology", "Wet Lab"],
-    milestones: [
+    timeline: [
       {
         title: "First bacterial transformation",
         date: "2025-02-01",

@@ -48,36 +48,33 @@ export default function AboutPage() {
         </h2>
         <div className="bg-hairline mt-4 h-px w-full" aria-hidden="true" />
         <p className="text-ink mt-5 text-[1.0625rem] leading-[1.78]">
-          In my last year of undergrad, I realized I had picked the wrong major.
-          STEM had my heart, yet I was stuck on a misguided legal career path I
-          fell into at eighteen. So during my last semester, I took every single
-          class I could squeeze on top of my finishing course load: Calculus,
-          Physics, Chemistry, you name it. I got great grades, loved every
-          second, got my non-applicable degree and faced a question: Now what?
-          Another undergrad? Graduate again in my late 20s? Accept I missed my
-          shot, and move on with my life?
+          In my final year of undergraduate studies, I realized I had chosen the
+          wrong major. I had always been drawn to STEM, but had committed early
+          to a path that no longer felt right. During my last semester, I
+          enrolled in as many foundational science courses as I could alongside
+          my remaining requirements: Calculus, Physics, Chemistry, you name it.
+          I did well, loved every second, and graduated with a degree that no
+          longer reflected where I wanted to go.
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          For a year I blundered around. I researched “third doors” into random
-          companies I couldn’t care less about, got jaded working with the
-          bureaucrats at PanCan and the Canadian Cancer Society, and did
-          LeetCode to pass time and feel productive. Eventually I found myself
-          on a trip with some incredible founders whose motto can be summed down
-          to: “You can just do things”. Simple, but it never really clicked for
-          me until then.
+          For about a year, I tried to figure out my way in. I attended
+          conferences, spent time working with large nonprofit organizations,
+          and did LeetCode to keep my brain engaged. I was moving, learning, and
+          searching, but still didn’t have a clear entry point. Eventually, I
+          found myself on a trip with some incredible founders whose motto can
+          be summed down to: “You can just do things”. It sounds obvious, but it
+          never really clicked for me until then.
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          Upon returning I applied to HTGAA, found a lab and got to work. It was
-          love at first PCR and George Church lecture. Nowadays, you can find me
-          pipetting away at Makerlabs under Scott Pownall&rsquo;s guidance. I
-          love what I do, and I genuinely believe in the future of this
-          incredible field. Currently, I’m hyper-focused on plant engineering,
-          specifically utilizing luciferin biosynthesis.
+          Upon returning, I applied to HTGAA, found a lab, and got to work.
+          Anything I lack, I’m determined to learn. It was love at first PCR and
+          George Church lecture. I knew pretty quickly I was where I was
+          supposed to be. My current focus is plant engineering, specifically
+          exploring luciferin biosynthesis.
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          Everything here is written by someone who is still learning.
-          You&rsquo;ll find honest mistakes alongside genuine breakthroughs.
-          It’s been quite a journey getting here, thank you for stopping by.
+          This is a record of work in progress. It includes both errors and
+          genuine discoveries. Thank you for stopping by.
         </p>
       </section>
 

@@ -26,9 +26,11 @@ export default function DeepDivesPage() {
 
       {/* Posts */}
       <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        {deepDives.map((post) => (
-          <PostCard key={post.slug} post={post} />
-        ))}
+        {[...deepDives]
+          .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+          .map((post) => (
+            <PostCard key={post.slug} post={post} />
+          ))}
       </div>
     </div>
   );

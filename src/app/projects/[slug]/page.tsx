@@ -75,10 +75,12 @@ export default async function ProjectPage({ params }: Props) {
       {/* Timeline */}
       <section>
         <h2 className="mb-8 font-mono text-xs uppercase tracking-widest text-secondary">
-          Milestones
+          Timeline
         </h2>
         <div className="relative border-l border-hairline pl-8">
-          {project.milestones.map((milestone, i) => (
+          {[...project.milestones]
+            .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+            .map((milestone, i) => (
             <div
               key={i}
               className={`relative pb-10 last:pb-0`}

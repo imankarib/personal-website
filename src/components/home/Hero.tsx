@@ -22,9 +22,9 @@ export function Hero() {
             </div>
 
             <h1 className="font-heading text-[2.75rem] leading-[1.08] font-bold tracking-tight text-white sm:text-[3.5rem] lg:text-[4rem]">
-              Engineering{" "}
+              Experimental{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
-                Biology
+                Synthetic Biology
               </span>
             </h1>
 
