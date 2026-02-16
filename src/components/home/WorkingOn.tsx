@@ -50,10 +50,10 @@ export function WorkingOn() {
       <div className="mx-auto max-w-[1200px] px-6">
         {/* Section header */}
         <div className="mb-12">
-          <p className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">
+          <p className="text-secondary font-mono text-xs tracking-[0.2em] uppercase">
             What I&rsquo;m working on
           </p>
-          <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+          <h2 className="font-heading text-ink mt-3 text-2xl font-bold tracking-tight sm:text-3xl">
             Active projects &amp; areas of focus
           </h2>
         </div>
@@ -62,32 +62,32 @@ export function WorkingOn() {
         <div className="grid gap-5 sm:grid-cols-2">
           {cards.map((card) => (
             <Link key={card.title} href={card.href} className="block">
-              <div className="work-card h-full rounded-xl border border-hairline bg-paper p-6 sm:p-7">
+              <div className="work-card border-hairline bg-paper h-full rounded-xl border p-6 sm:p-7">
                 {/* Label */}
-                <p className="font-mono text-[0.625rem] tracking-[0.2em] text-accent">
+                <p className="text-accent font-mono text-[0.625rem] tracking-[0.2em]">
                   {card.label}
                 </p>
 
                 {/* Title */}
-                <h3 className="font-heading mt-3 text-lg font-semibold tracking-tight text-ink">
+                <h3 className="font-heading text-ink mt-3 text-lg font-semibold tracking-tight">
                   {card.title}
                 </h3>
 
                 {/* Description */}
-                <p className="mt-2 text-[0.9375rem] leading-relaxed text-secondary">
+                <p className="text-secondary mt-2 text-[0.9375rem] leading-relaxed">
                   {card.description}
                 </p>
 
                 {/* Meta */}
                 <div className="mt-4 flex items-center gap-2">
                   {card.status && (
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-light px-2.5 py-0.5 text-xs font-medium text-accent">
-                      <span className="status-dot h-1 w-1 rounded-full bg-accent" />
+                    <span className="bg-accent-light text-accent inline-flex items-center gap-1.5 rounded-full px-2.5 py-0.5 text-xs font-medium">
+                      <span className="status-dot bg-accent h-1 w-1 rounded-full" />
                       {card.status}
                     </span>
                   )}
                   {card.count && (
-                    <span className="font-mono text-xs text-secondary">
+                    <span className="text-secondary font-mono text-xs">
                       {card.count}
                     </span>
                   )}

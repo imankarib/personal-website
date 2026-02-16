@@ -33,7 +33,7 @@ export default function AboutPage() {
               About
             </p>
             <h1 className="font-heading text-ink text-[2rem] font-semibold tracking-tight sm:text-[2.5rem]">
-              I&rsquo;m Iman.
+              Hi there! I'm Iman.
             </h1>
             <div className="bg-accent mt-4 h-[2px] w-10" aria-hidden="true" />
             <p className="text-secondary mt-5 text-[1.0625rem] leading-relaxed"></p>
@@ -59,8 +59,8 @@ export default function AboutPage() {
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
           For a year I blundered around. I researched “third doors” into random
-          companies I couldn’t care less about, got jaded trying to work with
-          the bureaucrats at PanCan and the Canadian Cancer Society, and did
+          companies I couldn’t care less about, got jaded working with the
+          bureaucrats at PanCan and the Canadian Cancer Society, and did
           LeetCode to pass time and feel productive. Eventually I found myself
           on a trip with some incredible founders whose motto can be summed down
           to: “You can just do things”. Simple, but it never really clicked for
@@ -92,6 +92,35 @@ export default function AboutPage() {
           something wrong in my writing, I genuinely want to hear from you. The
           best way to reach me is by email.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-4">
+          <a
+            href="mailto:imankaribzhanova@gmail.com"
+            className="text-accent decoration-accent/40 hover:decoration-accent inline-flex items-center gap-1.5 text-[0.9375rem] font-medium underline decoration-1 underline-offset-[3px] transition-all"
+          >
+            Email
+            <span className="arrow-slide text-sm">&rarr;</span>
+          </a>
+          <span className="text-hairline">&middot;</span>
+          <a
+            href="https://instagram.com/imrachkya"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent decoration-accent/40 hover:decoration-accent inline-flex items-center gap-1.5 text-[0.9375rem] font-medium underline decoration-1 underline-offset-[3px] transition-all"
+          >
+            Instagram
+            <span className="arrow-slide text-sm">&rarr;</span>
+          </a>
+          <span className="text-hairline">&middot;</span>
+          <a
+            href="https://github.com/imankarib"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent decoration-accent/40 hover:decoration-accent inline-flex items-center gap-1.5 text-[0.9375rem] font-medium underline decoration-1 underline-offset-[3px] transition-all"
+          >
+            GitHub
+            <span className="arrow-slide text-sm">&rarr;</span>
+          </a>
+        </div>
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <Link
             href="/start-here"

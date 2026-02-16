@@ -13,20 +13,20 @@ export default function LabNotesPage() {
     <div className="mx-auto max-w-[1040px] px-6 py-16">
       {/* Page header */}
       <header className="mb-12">
-        <span className="mb-3 block font-mono text-xs uppercase tracking-widest text-secondary">
+        <span className="text-secondary mb-3 block font-mono text-xs tracking-widest uppercase">
           Lab Notes
         </span>
-        <h1 className="font-heading text-[2rem] font-semibold tracking-tight text-ink sm:text-[2.5rem]">
+        <h1 className="font-heading text-ink text-[2rem] font-semibold tracking-tight sm:text-[2.5rem]">
           The open notebook
         </h1>
-        <p className="mt-3 max-w-[540px] text-base leading-relaxed text-secondary">
-          Short, frequent entries documenting experiments, observations, and
-          honest mistakes. Updated as I learn.
+        <p className="text-secondary mt-3 max-w-[540px] text-base leading-relaxed">
+          Short, frequent entries from the lab documenting experiments,
+          observations, and honest mistakes.
         </p>
       </header>
 
       {/* Posts */}
-      <div className="divide-y divide-hairline">
+      <div className="divide-hairline divide-y">
         {labNotes.map((post) => (
           <div key={post.slug} className="py-8 first:pt-0 last:pb-0">
             <PostCard post={post} />

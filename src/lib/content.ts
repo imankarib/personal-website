@@ -121,7 +121,7 @@ export const deepDives: Post[] = [
     confidence: "refuted",
     featured: false,
     excerpt:
-      "I found a copper oxidase (PPYR_12315) with 100x higher expression in the firefly lantern than any other copper-binding enzyme. AlphaFold structures, electrostatic mapping, and cross-species conservation all seemed to support it as the missing luciferin synthase. Then HMMER profile analysis revealed it was a lysyl oxidase\u2014a completely different enzyme family. A lesson in confirmation bias and why motif-level analysis is not enough.",
+      "I found a copper oxidase (PPYR_12315) with ~100× higher expression in the lantern than other copper-binding enzymes. Structure, electrostatics, and conservation all pointed to it as a luciferin synthase candidate. HMMER later showed it was actually a lysyl oxidase aka. an entirely different family. A good lesson in research.",
   },
   {
     slug: "mining-fallon-luciferin-pathway",
@@ -135,7 +135,7 @@ export const deepDives: Post[] = [
     confidence: "speculative",
     featured: true,
     excerpt:
-      "I took the differential expression data from Fallon et al. (2018) and applied two layers of filtering\u2014expression enrichment and enzyme annotation\u2014to reduce the Photinus pyralis genome from 15,773 genes to a manageable set of luciferin biosynthesis candidates. After cross-species BLAST analysis, phylogenetics, and manual review, four novel candidates and one known candidate emerged.",
+      "I used Fallon et al. (2018) lantern expression data to filter the Photinus pyralis genome from 15,773 genes down to a small set of luciferin pathway candidates. After cross-species BLAST, phylogenetics, and manual review, three novel candidates and one literature supported candidate remained.",
   },
 ];
 
@@ -147,7 +147,7 @@ export const projects: Project[] = [
     title: "The Enzyme Hunt",
     deck: "Tracking down the elusive luciferin synthase that could unlock autonomous bioluminescence in plants.",
     description:
-      "Since Keith Wood's landmark 1986 experiment, no one has achieved autonomous firefly bioluminescence in plants: the missing piece is the enzyme that synthesizes luciferin. Through computational analysis of firefly genomes, I've identified certain candidates. This project follows the trail from AlphaFold predictions and geometric docking to wet-lab validation in N. benthamiana using MoClo modular cloning.",
+      "Since Keith Wood's landmark 1986 experiment, no one has achieved autonomous firefly bioluminescence in plants: the missing piece is the enzyme that synthesizes luciferin. Through computational analysis of firefly genomes, I've identified certain candidates.",
     status: "active",
     tags: ["Research", "Bioinformatics", "Bioluminescence"],
     milestones: [

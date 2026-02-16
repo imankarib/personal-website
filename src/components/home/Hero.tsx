@@ -22,16 +22,15 @@ export function Hero() {
             </div>
 
             <h1 className="font-heading text-[2.75rem] leading-[1.08] font-bold tracking-tight text-white sm:text-[3.5rem] lg:text-[4rem]">
-              Building with{" "}
+              Engineering{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-emerald-300 bg-clip-text text-transparent">
                 Biology
               </span>
             </h1>
 
             <p className="mt-6 max-w-[480px] text-[1.0625rem] leading-relaxed text-slate-400">
-              I&rsquo;m Iman &mdash; I design genetic circuits, engineer
-              bioluminescent organisms, and document everything I learn along
-              the way.
+              I&rsquo;m Iman. I design genetic circuits, engineer bioluminescent
+              organisms, and document everything I learn along the way.
             </p>
 
             {/* CTA row */}
@@ -72,7 +71,7 @@ export function Hero() {
                 />
 
                 {/* Overlay info card */}
-                <div className="absolute bottom-4 left-4 right-4 rounded-lg border border-white/10 bg-black/60 px-4 py-3 backdrop-blur-md">
+                <div className="absolute right-4 bottom-4 left-4 rounded-lg border border-white/10 bg-black/60 px-4 py-3 backdrop-blur-md">
                   <div className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     <span className="font-mono text-[0.6875rem] tracking-wide text-emerald-400">
