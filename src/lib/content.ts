@@ -22,7 +22,8 @@ export interface Milestone {
   title: string;
   date: string;
   description: string;
-  linkedPostSlug?: string;
+  linkedHref?: string;
+  linkedLabel?: string;
 }
 
 export interface Project {
@@ -109,6 +110,20 @@ export const labNotes: Post[] = [
 
 export const deepDives: Post[] = [
   {
+    slug: "mining-fallon-luciferin-pathway",
+    title:
+      "Mining Fallon et al. for Luciferin Pathway Candidates in Photinus pyralis",
+    deck: "Filtering 15,773 firefly genes down to four candidate enzymes that may be involved in luciferin biosynthesis.",
+    date: "2026-02-15",
+    readingTime: "22 min",
+    tags: ["Bioluminescence", "Bioinformatics", "Luciferin", "Genomics"],
+    type: "deep-dive",
+    confidence: "hypothesis",
+    featured: true,
+    excerpt:
+      "I took the differential expression data from Fallon et al. (2018) and applied two layers of filtering\u2014expression enrichment and enzyme annotation\u2014to reduce the Photinus pyralis genome from 15,773 genes to a manageable set of luciferin biosynthesis candidates. After cross-species BLAST analysis, phylogenetics, and manual review, three novel candidates and one known candidate emerged.",
+  },
+  {
     slug: "crispr-for-beginners",
     title: "CRISPR for Beginners: What I Wish I Knew",
     deck: "A first-principles explanation of CRISPR-Cas9, written while I was still learning it.",
@@ -124,7 +139,7 @@ export const deepDives: Post[] = [
   {
     slug: "central-dogma-explained",
     title: "The Central Dogma, Actually Explained",
-    deck: "DNA → RNA → Protein, and all the nuance that simple arrow hides.",
+    deck: "DNA \u2192 RNA \u2192 Protein, and all the nuance that simple arrow hides.",
     date: "2024-03-05",
     readingTime: "11 min",
     tags: ["Molecular Biology", "Fundamentals", "DNA"],
@@ -162,34 +177,12 @@ export const projects: Project[] = [
     tags: ["Research", "Bioinformatics", "Bioluminescence"],
     milestones: [
       {
-        title: "Computational target identification",
-        date: "2025-02-01",
+        title: "Mining Fallon et al. for luciferin pathway candidates",
+        date: "2026-02-15",
         description:
-          "Surveyed firefly genomes and identified PPYR_12315 as a candidate luciferin synthase. Ran AlphaFold structure prediction and geometric docking analysis against known substrates.",
-      },
-      {
-        title: "Cross species validation",
-        date: "2025-02-15",
-        description:
-          "Confirmed PPYR_12315 is conserved across the entire Lampyridae family, strengthening the case that it plays a functional role in luciferin biosynthesis.",
-      },
-      {
-        title: "Gene design and ordering",
-        date: "2025-03-01",
-        description:
-          "Designed four synthetic genes (Luc2, BGL, PPYR_12315 full length, and PPYR_12315 ΔSP) optimized for plant expression and compatible with MoClo assembly.",
-      },
-      {
-        title: "Plant preparation",
-        date: "2025-03-01",
-        description:
-          "Started N. benthamiana seeds. Plants need 4 to 5 weeks to reach the right size for agroinfiltration.",
-      },
-      {
-        title: "MoClo assembly and agroinfiltration",
-        date: "2025-04-01",
-        description:
-          "Assembling the five step experimental ladder and infiltrating N. benthamiana leaves to test for autonomous bioluminescence.",
+          "Applied two-layer filtering (expression + enzyme annotation) to Fallon's differential expression data, reducing 15,773 genes to 18 enzyme candidates. After manual review, cross-species BLAST, and phylogenetic analysis, identified three novel candidates (PPYR_14756, PPYR_02911, PPYR_14056) for luciferin biosynthesis.",
+        linkedHref: "/deep-dives/mining-fallon-luciferin-pathway",
+        linkedLabel: "Read the full deep dive",
       },
     ],
   },

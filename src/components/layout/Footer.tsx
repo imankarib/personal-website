@@ -2,48 +2,51 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-hairline mt-24 border-t">
-      <div className="mx-auto max-w-[1040px] px-6 py-10">
+    <footer className="mt-24 border-t border-hairline">
+      <div className="mx-auto max-w-[1200px] px-6 py-12">
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
             <Link
               href="/"
-              className="font-heading text-ink text-base font-semibold"
+              className="font-heading text-base font-bold tracking-tight text-ink"
             >
-              IK Labs
+              Iman K.
             </Link>
-            <p className="text-secondary mt-1 text-sm">
-              Learning synthetic biology in public.
+            <p className="mt-1 text-sm text-secondary">
+              Synthetic biologist &amp; builder.
             </p>
           </div>
-          <nav className="text-secondary flex flex-wrap gap-x-6 gap-y-2 text-sm">
+          <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-secondary">
             <Link
               href="/start-here"
-              className="hover:text-ink transition-colors"
+              className="transition-colors hover:text-ink"
             >
               Start Here
             </Link>
             <Link
               href="/lab-notes"
-              className="hover:text-ink transition-colors"
+              className="transition-colors hover:text-ink"
             >
               Lab Notes
             </Link>
             <Link
               href="/deep-dives"
-              className="hover:text-ink transition-colors"
+              className="transition-colors hover:text-ink"
             >
               Deep Dives
             </Link>
-            <Link href="/projects" className="hover:text-ink transition-colors">
+            <Link
+              href="/projects"
+              className="transition-colors hover:text-ink"
+            >
               Projects
             </Link>
-            <Link href="/about" className="hover:text-ink transition-colors">
+            <Link href="/about" className="transition-colors hover:text-ink">
               About
             </Link>
           </nav>
         </div>
-        <div className="border-hairline text-secondary mt-8 border-t pt-6 text-xs">
+        <div className="mt-8 border-t border-hairline pt-6 text-xs text-secondary">
           &copy; {new Date().getFullYear()} Iman. All rights reserved.
         </div>
       </div>

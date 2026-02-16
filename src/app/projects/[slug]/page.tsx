@@ -95,12 +95,12 @@ export default async function ProjectPage({ params }: Props) {
               <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-secondary">
                 {milestone.description}
               </p>
-              {milestone.linkedPostSlug && (
+              {milestone.linkedHref && (
                 <Link
-                  href={`/lab-notes/${milestone.linkedPostSlug}`}
+                  href={milestone.linkedHref}
                   className="mt-2 inline-block text-sm text-accent transition-colors hover:text-ink"
                 >
-                  Related lab note &rarr;
+                  {milestone.linkedLabel ?? "Related post"} &rarr;
                 </Link>
               )}
             </div>

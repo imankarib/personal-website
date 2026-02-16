@@ -1,64 +1,83 @@
 import Link from "next/link";
-import { labNotes, formatDate } from "~/lib/content";
+import { getAllPosts, formatDate } from "~/lib/content";
+import { LabStamp } from "~/components/ui/LabStamp";
 
 export function LatestLabNotes() {
-  const latest = labNotes.slice(0, 5);
+  const posts = getAllPosts().slice(0, 6);
 
   return (
-    <section className="border-t border-hairline py-16">
-      <div className="mx-auto max-w-[1040px] px-6">
+    <section className="border-t border-hairline py-20 sm:py-24">
+      <div className="mx-auto max-w-[1200px] px-6">
         {/* Section header */}
-        <div className="mb-10 flex items-end justify-between">
+        <div className="mb-12 flex items-end justify-between">
           <div>
-            <h2 className="font-mono text-xs uppercase tracking-widest text-secondary">
-              Latest Lab Notes
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-secondary">
+              Latest from the lab
+            </p>
+            <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-ink sm:text-3xl">
+              Recent experiments &amp; writing
             </h2>
-            <div
-              className="mt-3 h-[2px] w-8 bg-accent"
-              aria-hidden="true"
-            />
           </div>
           <Link
             href="/lab-notes"
-            className="text-sm text-secondary transition-colors hover:text-accent"
+            className="hidden items-center gap-1.5 text-sm font-medium text-secondary transition-colors hover:text-accent sm:inline-flex"
           >
-            View all &rarr;
+            View all
+            <span aria-hidden="true" className="arrow-slide text-xs">
+              &rarr;
+            </span>
           </Link>
         </div>
 
-        {/* Numbered entries */}
-        <div className="divide-y divide-hairline border-t border-hairline">
-          {latest.map((post, i) => (
-            <article key={post.slug} className="group">
-              <Link
-                href={`/lab-notes/${post.slug}`}
-                className="flex gap-5 py-5 sm:gap-8"
-              >
-                {/* Index number */}
-                <span className="font-heading shrink-0 w-8 pt-0.5 text-right text-[1.75rem] leading-none font-medium text-hairline sm:w-10 sm:text-[2rem]">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
+        {/* Post grid */}
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => {
+            const href =
+              post.type === "lab-note"
+                ? `/lab-notes/${post.slug}`
+                : `/deep-dives/${post.slug}`;
 
-                {/* Content */}
-                <div className="min-w-0 flex-1">
-                  <h3 className="font-heading text-base leading-snug font-semibold text-ink transition-colors group-hover:text-accent">
+            return (
+              <Link key={post.slug} href={href} className="group block">
+                <article className="post-card h-full rounded-xl border border-hairline bg-paper p-6">
+                  <div className="flex items-center gap-2.5">
+                    <LabStamp type={post.type} />
+                    <time
+                      dateTime={post.date}
+                      className="font-mono text-[0.6875rem] text-secondary"
+                    >
+                      {formatDate(post.date)}
+                    </time>
+                  </div>
+
+                  <h3 className="font-heading mt-4 text-base leading-snug font-semibold tracking-tight text-ink transition-colors group-hover:text-accent">
                     {post.title}
                   </h3>
-                  <p className="mt-1 text-[0.8125rem] leading-relaxed text-secondary">
+
+                  <p className="mt-2 text-sm leading-relaxed text-secondary">
                     {post.deck}
                   </p>
-                </div>
 
-                {/* Date */}
-                <time
-                  dateTime={post.date}
-                  className="hidden shrink-0 pt-0.5 text-sm text-secondary sm:block"
-                >
-                  {formatDate(post.date)}
-                </time>
+                  <div className="mt-4 font-mono text-xs text-secondary/60">
+                    {post.readingTime} read
+                  </div>
+                </article>
               </Link>
-            </article>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Mobile "View all" link */}
+        <div className="mt-8 sm:hidden">
+          <Link
+            href="/lab-notes"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent"
+          >
+            View all notes
+            <span aria-hidden="true" className="arrow-slide text-xs">
+              &rarr;
+            </span>
+          </Link>
         </div>
       </div>
     </section>

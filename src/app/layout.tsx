@@ -1,29 +1,23 @@
 import "~/styles/globals.css";
 
 import { type Metadata } from "next";
-import { Fraunces, Source_Serif_4, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "~/components/layout/Header";
 import { Footer } from "~/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "IK — Learning Synthetic Biology in Public",
+    default: "Iman — Synthetic Biologist & Builder",
     template: "%s — Iman",
   },
   description:
-    "I'm Iman. I'm documenting my journey learning synthetic biology—the experiments, the failures, and everything in between.",
+    "I'm Iman. I design genetic circuits, engineer bioluminescent organisms, and document everything I learn along the way.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const fraunces = Fraunces({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-fraunces",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -39,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${sourceSerif.variable} ${jetbrains.variable}`}
+      className={`${inter.variable} ${jetbrains.variable}`}
       suppressHydrationWarning
     >
       <body className="bg-paper text-ink min-h-screen">

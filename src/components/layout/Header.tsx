@@ -28,24 +28,21 @@ export function Header() {
     <header
       className={`sticky top-0 z-50 backdrop-blur-md transition-all duration-300 ${
         scrolled
-          ? "border-b border-hairline bg-paper/85 shadow-sm"
+          ? "border-b border-hairline bg-paper/90 shadow-sm"
           : "border-b border-transparent bg-paper/70"
       }`}
     >
-      <div className="mx-auto flex max-w-[1040px] items-center justify-between px-6 py-5">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
         {/* Wordmark */}
-        <Link
-          href="/"
-          className="group flex items-baseline gap-1.5"
-        >
-          <span className="font-heading text-xl font-bold tracking-tight text-ink transition-colors group-hover:text-accent">
-            IK
+        <Link href="/" className="group flex items-center gap-2">
+          <span className="font-heading text-lg font-bold tracking-tight text-ink transition-colors group-hover:text-accent">
+            Iman K.
           </span>
-          <span className="mb-[1px] h-[6px] w-[6px] rounded-full bg-glow shadow-[0_0_6px_rgba(52,211,153,0.5)] transition-shadow group-hover:shadow-[0_0_12px_rgba(52,211,153,0.8)]" />
+          <span className="status-dot h-[6px] w-[6px] rounded-full bg-glow" />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {navItems.map((item) => {
             const isActive =
               pathname === item.href || pathname.startsWith(item.href + "/");
@@ -53,7 +50,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`nav-link text-sm tracking-wide transition-colors ${
+                className={`nav-link text-[0.8125rem] font-medium tracking-wide transition-colors ${
                   isActive
                     ? "nav-link-active text-accent"
                     : "text-secondary hover:text-ink"
@@ -105,7 +102,7 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`text-sm tracking-wide transition-colors ${
+                  className={`text-sm font-medium tracking-wide transition-colors ${
                     isActive
                       ? "text-accent"
                       : "text-secondary hover:text-ink"
