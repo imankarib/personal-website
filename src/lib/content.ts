@@ -110,6 +110,19 @@ export const labNotes: Post[] = [
 
 export const deepDives: Post[] = [
   {
+    slug: "firefly-bioluminescence",
+    title: "Firefly Bioluminescence: The Chemistry and Plant Engineering",
+    deck: "A comprehensive reference covering firefly light chemistry, the luciferin biosynthesis pathway, and the engineering strategy for autonomous bioluminescence in plants.",
+    date: "2026-02-15",
+    readingTime: "30 min",
+    tags: ["Bioluminescence", "Luciferin", "Plant Biology", "Synthetic Biology"],
+    type: "deep-dive",
+    confidence: "hypothesis",
+    featured: true,
+    excerpt:
+      "This is the master reference for my bioluminescence projects: how firefly light works at the molecular level, what we know about luciferin biosynthesis, why no one has achieved autonomous plant glow since Keith Wood's 1986 experiment, and the engineering strategy I'm pursuing to change that.",
+  },
+  {
     slug: "copper-oxidase-wrong-protein",
     title:
       "Investigating a Copper Oxidase That Turned Out to Be the Wrong Protein",
