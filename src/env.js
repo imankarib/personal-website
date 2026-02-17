@@ -8,6 +8,8 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
+    SITE_LOGIN_PASSWORD: z.string().min(1),
+    SITE_AUTH_SECRET: z.string().min(1),
   },
 
   /**
@@ -25,6 +27,8 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    SITE_LOGIN_PASSWORD: process.env.SITE_LOGIN_PASSWORD,
+    SITE_AUTH_SECRET: process.env.SITE_AUTH_SECRET,
     // NEXT_PUBLIC_CLIENTVAR: process.env.NEXT_PUBLIC_CLIENTVAR,
   },
   /**

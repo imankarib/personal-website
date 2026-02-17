@@ -39,7 +39,7 @@ export default function RootLayout({
       <body className="bg-paper text-ink min-h-screen">
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.dataset.theme='dark'}}catch(e){}})()`,
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.dataset.theme='dark'}}catch(e){}})()`,
           }}
         />
         <Header />
