@@ -29,7 +29,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-[480px] text-[1.0625rem] leading-relaxed text-slate-400">
-              I&rsquo;m Iman. I engineer bioluminescent organisms, and document
+              I&rsquo;m Iman. I&rsquo;m learning synthetic biology while documenting
               everything I learn along the way.
             </p>
 
