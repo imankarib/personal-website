@@ -17,7 +17,8 @@ export function FireflyBioluminescenceContent() {
       <h3>Step 1: Activation</h3>
 
       <p>
-        Luciferase (the enzyme) catalyzes a two-step reaction. First it binds{" "}
+        Luciferase (the enzyme) catalyzes a two-step reaction (Conti et al.
+        1996; Inouye 2010). First it binds{" "}
         <strong>D-luciferin</strong> and <strong>ATP</strong> (with Mg&sup2;⁺ as
         a cofactor) forming <strong>luciferyl-adenylate</strong> (luciferin-AMP)
         and releasing <strong>pyrophosphate</strong> (PPi). This is essentially
@@ -64,7 +65,7 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         The luciferyl-adenylate intermediate then reacts with molecular oxygen
-        (O₂). This oxidation produces a highly unstable{" "}
+        (O₂) (Conti et al. 1996). This oxidation produces a highly unstable{" "}
         <strong>dioxetanone ring</strong> intermediate, which spontaneously
         decomposes to yield <strong>oxyluciferin</strong>, <strong>CO₂</strong>,
         and <strong>AMP</strong> and a photon of light (~560 nm, yellow-green).
@@ -153,8 +154,9 @@ export function FireflyBioluminescenceContent() {
         This is where it gets really interesting and where the field has been
         stuck for decades. Keith Wood showed in 1986 that if you put the
         luciferase gene into plants and spray them with exogenous luciferin,
-        they glow. But that&rsquo;s not autonomous, you need to continuously
-        supply the substrate. The question is: where does D-luciferin come from
+        they glow (Ow et al. 1986). The luciferase cDNA had been cloned just a
+        year earlier (de Wet et al. 1985). But that&rsquo;s not autonomous, you
+        need to continuously supply the substrate. The question is: where does D-luciferin come from
         in the firefly? The pathway has been progressively worked out over the
         last decade, but certain parts remain unclear.
       </p>
@@ -178,8 +180,8 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         Current evidence supports that luciferin forms from one molecule of a
-        quinone and two molecules of L-cysteine. These are ordinary biological
-        metabolites: quinone/hydroquinone redox systems are widespread in cells
+        quinone and two molecules of L-cysteine (Oba et al. 2013). These are
+        ordinary biological metabolites: quinone/hydroquinone redox systems are widespread in cells
         (CoQ10 being a familiar example), and cysteine is a standard amino acid
         present in all tissues. This makes the chemistry particularly relevant
         for engineering efforts, since the precursors already exist in plants.
@@ -213,7 +215,8 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         The first cysteine reacts with the quinone to form the benzothiazole
-        core, and during this step its carboxyl group is lost as CO₂ through
+        core via a 2-S-cysteinylhydroquinone intermediate (Kanie et al. 2018),
+        and during this step its carboxyl group is lost as CO₂ through
         decarboxylation. A second cysteine then condenses with this intermediate
         to form the thiazoline ring and contributes the carboxylate group
         required for the ATP-dependent luciferase reaction. Together, these
@@ -236,13 +239,14 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         This condensation chemistry can occur non-enzymatically: p-benzoquinone
-        mixed with cysteine in a neutral buffer produces luciferin at low yield.
-        In the firefly, however, the process is likely enzyme-assisted. Copper
-        oxidases such as laccase enhance luciferin formation from hydroquinone
-        and cysteine in vitro, suggesting that regulated quinone redox chemistry
-        may play a role in vivo. Hydroquinone itself is thought to be stored in
-        a protected glycosylated form, possibly as arbutin, and released by
-        &beta;-glucosidase when needed.
+        mixed with cysteine in a neutral buffer produces luciferin at low yield
+        (Kanie et al. 2016). In the firefly, however, the process is likely
+        enzyme-assisted. Copper oxidases such as laccase enhance luciferin
+        formation from hydroquinone and cysteine in vitro (de Souza et al.
+        2022), suggesting that regulated quinone redox chemistry may play a role
+        in vivo. Hydroquinone itself is thought to be stored in a protected
+        glycosylated form, possibly as arbutin, and released by
+        &beta;-glucosidase when needed (Oba et al. 2013).
       </p>
 
       <p>
@@ -392,7 +396,8 @@ export function FireflyBioluminescenceContent() {
       <p>
         This oxidation can happen spontaneously. Benzothiazolines are prone to
         air oxidation, and in the non-enzymatic one-pot reaction (benzoquinone +
-        cysteine in neutral buffer), molecular oxygen alone is sufficient. In
+        cysteine in neutral buffer), molecular oxygen alone is sufficient
+        (Kanie et al. 2016). In
         fireflies, however, the step is likely enzyme-assisted to control rate,
         timing, and selectivity. The responsible enzyme has not been
         definitively identified. Candidates include a dedicated oxidase, a
@@ -512,10 +517,10 @@ export function FireflyBioluminescenceContent() {
       </figure>
 
       <p>
-        The current leading model, supported by the Niwa (2006) and Maeda (2017)
-        groups, proposes that the biosynthetic pathway initially produces
-        L-luciferin, which is then converted to D-luciferin through a three-step
-        deracemization process:
+        The current leading model, first proposed by Niwa et al. (2006) and
+        later validated experimentally by Zhang et al. (2020), proposes that the
+        biosynthetic pathway initially produces L-luciferin, which is then
+        converted to D-luciferin through a three-step deracemization process:
       </p>
 
       <figure className="my-8">
@@ -758,11 +763,12 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         Within each photocyte, the light-producing reaction takes place inside
-        peroxisomes, small membrane-bound organelles. Firefly luciferase has a
-        C-terminal peroxisomal targeting signal (the tripeptide &ndash;SKL),
-        which directs it into peroxisomes after being synthesized in the
-        cytosol. Photocytes are densely packed with peroxisomes, and these
-        organelles are the primary sites where luciferase operates.
+        peroxisomes, small membrane-bound organelles (Keller et al. 1987).
+        Firefly luciferase has a C-terminal peroxisomal targeting signal (the
+        tripeptide &ndash;SKL), which directs it into peroxisomes after being
+        synthesized in the cytosol (Gould et al. 1987). Photocytes are densely
+        packed with peroxisomes, and these organelles are the primary sites
+        where luciferase operates.
       </p>
 
       <p>
@@ -776,8 +782,8 @@ export function FireflyBioluminescenceContent() {
       <p>
         Some candidate enzymes involved in luciferin management may also
         localize to peroxisomes. For example, certain ACOT-type thioesterases
-        carry predicted PTS1 signals, suggesting that parts of the L&rarr;D
-        conversion cycle could occur inside this compartment.
+        carry predicted PTS1 signals (Zhang et al. 2020), suggesting that parts
+        of the L&rarr;D conversion cycle could occur inside this compartment.
       </p>
 
       <h3>Multiple compartments</h3>
@@ -798,12 +804,13 @@ export function FireflyBioluminescenceContent() {
       <p>
         The on/off switching of firefly light is controlled largely by oxygen
         availability. Neural signals trigger nitric oxide (NO) release in the
-        lantern. NO temporarily inhibits mitochondrial respiration, reducing
-        oxygen consumption by mitochondria and allowing more oxygen to reach the
-        peroxisomes. This influx of oxygen enables the luciferase reaction and
-        produces a flash. When NO signaling stops, mitochondria resume consuming
-        oxygen, reducing peroxisomal oxygen levels and turning the light off. In
-        effect, the flash is controlled by regulating oxygen access.
+        lantern (Trimmer et al. 2001). NO temporarily inhibits mitochondrial
+        respiration, reducing oxygen consumption by mitochondria and allowing
+        more oxygen to reach the peroxisomes. This influx of oxygen enables the
+        luciferase reaction and produces a flash. When NO signaling stops,
+        mitochondria resume consuming oxygen, reducing peroxisomal oxygen levels
+        and turning the light off (Aprille et al. 2004). In effect, the flash
+        is controlled by regulating oxygen access.
       </p>
 
       <h3>Why this matters for plant engineering</h3>
@@ -838,10 +845,11 @@ export function FireflyBioluminescenceContent() {
       <h2>The other glowing plant: why not use the mushroom system?</h2>
 
       <p>
-        There is already a glowing plant on the market. In 2020, Mitiouchkina et
-        al. demonstrated autonomously bioluminescent tobacco using the fungal
-        bioluminescence pathway from <em>Neonothopanus nambi</em>, and the
-        company Light Bio now sells a glowing petunia commercially. That system
+        There is already a glowing plant on the market. In 2020, Mitiouchkina
+        et al. demonstrated autonomously bioluminescent tobacco using the fungal
+        bioluminescence pathway from <em>Neonothopanus nambi</em> (Mitiouchkina
+        et al. 2020), and the company Light Bio now sells a glowing petunia
+        commercially. That system
         works by tapping into caffeic acid, a metabolite plants already produce
         abundantly, and converting it through a four-enzyme pathway into a
         fungal luciferin that emits green light.
@@ -851,9 +859,9 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         The firefly system is fundamentally brighter. Firefly bioluminescence
-        has a quantum yield of roughly 41%, meaning 41 out of every 100
-        reactions produce a photon. That is the highest of any known
-        bioluminescence system. The fungal system is significantly lower. On a
+        has a quantum yield of roughly 41% (Ando et al. 2008), meaning 41 out
+        of every 100 reactions produce a photon. That is the highest of any
+        known bioluminescence system. The fungal system is significantly lower. On a
         per-reaction basis, firefly chemistry converts more energy into light
         and less into heat.
       </p>
@@ -896,8 +904,9 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         Since Keith Wood showed in 1986 that plants expressing firefly
-        luciferase glow when watered with luciferin, the goal has been obvious:
-        make the plant produce its own luciferin so it can glow autonomously.
+        luciferase glow when watered with luciferin (Ow et al. 1986), the goal
+        has been obvious: make the plant produce its own luciferin so it can
+        glow autonomously.
         That requires giving the plant the enzymatic machinery for the
         biosynthetic pathway described above.
       </p>
@@ -932,9 +941,10 @@ export function FireflyBioluminescenceContent() {
 
       <p>
         As described in the biosynthesis section, the hydroquinone/quinone
-        precursor is proposed to be stored as arbutin (hydroquinone locked
-        behind a glucose molecule in a safe, less reactive glycoside form). BGL
-        cleaves that glucose off, releasing free hydroquinone into the pathway.
+        precursor is proposed to be stored as arbutin (Oba et al. 2013),
+        hydroquinone locked behind a glucose molecule in a safe, less reactive
+        glycoside form. BGL cleaves that glucose off, releasing free
+        hydroquinone into the pathway.
         Certain species have natural arbutin stores, and plant-engineering
         studies have also built hydroquinone supply routes in hosts that do not.
         This step can act as a key gate for pathway flux: without effective
@@ -967,7 +977,7 @@ export function FireflyBioluminescenceContent() {
         it can condense with cysteine. Laccases (copper-containing oxidase
         enzymes) are strong candidates to carry out this conversion. This same
         enzyme class has been shown to enhance luciferin-forming chemistry in
-        vitro (Viviani 2022), suggesting it could play a dual role: generating
+        vitro (de Souza et al. 2022), suggesting it could play a dual role: generating
         the quinone and promoting the initial condensation step. Plants already
         contain many endogenous laccases, but including a pathway-specific
         laccase helps ensure sufficient and reliable oxidation of the precursor.
@@ -991,10 +1001,10 @@ export function FireflyBioluminescenceContent() {
       </p>
 
       <p>
-        This enzyme is intended to close the stereochemical inversion loop. As
-        described in the deracemization section, luciferase can divert
-        L-luciferin into L-luciferyl-CoA, which can spontaneously epimerize to
-        D-luciferyl-CoA. However, this CoA-bound form cannot participate in the
+        This enzyme is intended to close the stereochemical inversion loop
+        (Niwa et al. 2006; Zhang et al. 2020). As described in the
+        deracemization section, luciferase can divert L-luciferin into
+        L-luciferyl-CoA, which can spontaneously epimerize to D-luciferyl-CoA. However, this CoA-bound form cannot participate in the
         light reaction until the CoA group is removed.
       </p>
 
@@ -1045,10 +1055,11 @@ export function FireflyBioluminescenceContent() {
         optimized for that exact substrate. Unlike engineered variants such as
         AkaLuc, which were designed for synthetic luciferins and perform worse
         with native D-luciferin, the original enzyme efficiently converts
-        D-luciferin into light. It has a very high quantum yield, emits
-        yellow-green light (~560 nm) near the peak sensitivity of human night
-        vision, and already contains a built-in peroxisomal targeting signal
-        (&ndash;SKL) that correctly localizes it inside eukaryotic cells. It is
+        D-luciferin into light. It has a very high quantum yield (Ando et al.
+        2008), emits yellow-green light (~560 nm) near the peak sensitivity of
+        human night vision, and already contains a built-in peroxisomal
+        targeting signal (&ndash;SKL) that correctly localizes it inside
+        eukaryotic cells (Gould et al. 1987). It is
         also widely used, well-characterized, and free of licensing
         restrictions. For a system built around endogenous D-luciferin
         production, it&rsquo;s not a fallback option, it&rsquo;s the most
@@ -1067,7 +1078,8 @@ export function FireflyBioluminescenceContent() {
       <p>
         BGL and laccase supply the reactive quinone from stored precursors. The
         condensation with cysteine may proceed spontaneously or with laccase
-        assistance (it works non-enzymatically in vitro, albeit at low yield).
+        assistance (it works non-enzymatically in vitro, albeit at low yield;
+        Kanie et al. 2016).
         The benzothiazoline-to-benzothiazole oxidation may happen through air
         oxidation, since the molecule thermodynamically wants to become
         aromatic. ACOT1 closes the deracemization loop, and wild-type luciferase
@@ -1164,7 +1176,7 @@ export function FireflyBioluminescenceContent() {
               </span>
             </h3>
             <p className="mt-1 text-sm leading-relaxed">
-              Previously proposed by Zhang et al. (2020) as a candidate. It
+              Previously proposed as a candidate (Zhang et al. 2020). It
               shows strong lantern enrichment and has chemistry consistent with
               CoA-linked activation steps. This could connect to the proposed
               deracemization loop or to broader CoA-mediated processing of
@@ -1194,6 +1206,118 @@ export function FireflyBioluminescenceContent() {
           </div>
         </div>
       </section>
+
+      {/* ================================================== */}
+      <h2 className="mt-20">Citations</h2>
+      <ol className="list-decimal space-y-3 pl-6 text-sm leading-relaxed">
+        <li>
+          Conti, E., Franks, N.P., &amp; Brick, P. (1996). &ldquo;Crystal
+          structure of firefly luciferase throws light on a superfamily of
+          adenylate-forming enzymes.&rdquo; <em>Structure</em>, 4(3):287&ndash;298.
+        </li>
+        <li>
+          Inouye, S. (2010). &ldquo;Firefly luciferase: an adenylate-forming
+          enzyme for multicatalytic functions.&rdquo;{" "}
+          <em>Cellular and Molecular Life Sciences</em>, 67:387&ndash;404.
+        </li>
+        <li>
+          de Wet, J.R., Wood, K.V., Helinski, D.R., &amp; DeLuca, M. (1985).
+          &ldquo;Cloning of firefly luciferase cDNA and the expression of active
+          luciferase in <em>Escherichia coli</em>.&rdquo;{" "}
+          <em>Proceedings of the National Academy of Sciences</em>,
+          82(23):7870&ndash;7873.
+        </li>
+        <li>
+          Ow, D.W., Wood, K.V., DeLuca, M., de Wet, J.R., Helinski, D.R., &amp;
+          Howell, S.H. (1986). &ldquo;Transient and stable expression of the
+          firefly luciferase gene in plant cells and transgenic plants.&rdquo;{" "}
+          <em>Science</em>, 234(4778):856&ndash;859.
+        </li>
+        <li>
+          Oba, Y., Yoshida, N., Kanie, S., Ojika, M., &amp; Inouye, S. (2013).
+          &ldquo;Biosynthesis of firefly luciferin in adult lantern:
+          decarboxylation of ʟ-cysteine is a key step for benzothiazole ring
+          formation in firefly luciferin synthesis.&rdquo; <em>PLoS ONE</em>,
+          8(12):e84023.
+        </li>
+        <li>
+          Kanie, S., Nishikawa, T., Ojika, M., &amp; Oba, Y. (2016).
+          &ldquo;One-pot non-enzymatic formation of firefly luciferin in a neutral
+          buffer from p-benzoquinone and cysteine.&rdquo;{" "}
+          <em>Scientific Reports</em>, 6:24794.
+        </li>
+        <li>
+          Kanie, S., Nakai, R., Ojika, M., &amp; Oba, Y. (2018).
+          &ldquo;2-S-cysteinylhydroquinone is an intermediate for the firefly
+          luciferin biosynthesis that occurs in the pupal stage of the Japanese
+          firefly, <em>Luciola lateralis</em>.&rdquo;{" "}
+          <em>Bioorganic Chemistry</em>, 80:223&ndash;229.
+        </li>
+        <li>
+          de Souza, D.R., Silva, J.R., Moreira, A., &amp; Viviani, V.R. (2022).
+          &ldquo;Biosensing firefly luciferin synthesis in bacteria reveals a
+          cysteine-dependent quinone detoxification route in Coleoptera.&rdquo;{" "}
+          <em>Scientific Reports</em>, 12:14815.
+        </li>
+        <li>
+          Zhang, R., et al. (2020). &ldquo;Genomic and experimental data provide
+          new insights into luciferin biosynthesis and bioluminescence evolution in
+          fireflies.&rdquo; <em>Scientific Reports</em>, 10:15882.
+        </li>
+        <li>
+          Niwa, K., Nakamura, M., &amp; Ohmiya, Y. (2006).
+          &ldquo;Stereoisomeric bio-inversion key to biosynthesis of firefly
+          D-luciferin.&rdquo; <em>FEBS Letters</em>,
+          580(22):5283&ndash;5287.
+        </li>
+        <li>
+          Keller, G.A., Gould, S., DeLuca, M., &amp; Subramani, S. (1987).
+          &ldquo;Firefly luciferase is targeted to peroxisomes in mammalian
+          cells.&rdquo;{" "}
+          <em>Proceedings of the National Academy of Sciences</em>,
+          84(10):3264&ndash;3268.
+        </li>
+        <li>
+          Gould, S.J., Keller, G.A., &amp; Subramani, S. (1987).
+          &ldquo;Identification of a peroxisomal targeting signal at the carboxy
+          terminus of firefly luciferase.&rdquo;{" "}
+          <em>Journal of Cell Biology</em>, 105(6):2923&ndash;2931.
+        </li>
+        <li>
+          Trimmer, B.A., Aprille, J.R., Dudzinski, D.M., Lagace, C.J., Lewis,
+          S.M., Michel, T., Qazi, S., &amp; Zayas, R.M. (2001). &ldquo;Nitric
+          oxide and the control of firefly flashing.&rdquo; <em>Science</em>,
+          292(5526):2486&ndash;2488.
+        </li>
+        <li>
+          Aprille, J.R., Lagace, C.J., Modica-Napolitano, J., &amp; Trimmer,
+          B.A. (2004). &ldquo;Role of nitric oxide and mitochondria in control of
+          firefly flash.&rdquo;{" "}
+          <em>Integrative and Comparative Biology</em>, 44(3):213&ndash;219.
+        </li>
+        <li>
+          Mitiouchkina, T., et al. (2020). &ldquo;Plants with genetically encoded
+          autoluminescence.&rdquo; <em>Nature Biotechnology</em>,
+          38:944&ndash;946.
+        </li>
+        <li>
+          Ando, Y., Niwa, K., Yamada, N., Enomoto, T., Irie, T., Kubota, H.,
+          Ohmiya, Y., &amp; Akiyama, H. (2008). &ldquo;Firefly bioluminescence
+          quantum yield and colour change by pH-sensitive green
+          emission.&rdquo; <em>Nature Photonics</em>, 2:44&ndash;47.
+        </li>
+        <li>
+          Seliger, H.H. &amp; McElroy, W.D. (1959). &ldquo;Quantum yield in the
+          oxidation of firefly luciferin.&rdquo;{" "}
+          <em>Biochemical and Biophysical Research Communications</em>,
+          1:21&ndash;24.
+        </li>
+        <li>
+          Seliger, H.H. &amp; McElroy, W.D. (1960). &ldquo;Spectral emission and
+          quantum yield of firefly bioluminescence.&rdquo;{" "}
+          <em>Archives of Biochemistry and Biophysics</em>, 88:136&ndash;141.
+        </li>
+      </ol>
     </>
   );
 }

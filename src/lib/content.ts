@@ -40,69 +40,26 @@ export interface Project {
 
 export const labNotes: Post[] = [
   {
-    slug: "exploring-igem-parts-registry",
-    title: "Exploring the iGEM Parts Registry for the First Time",
-    deck: "A tour through the world's largest collection of standardized biological parts.",
-    date: "2024-02-18",
-    readingTime: "4 min",
-    tags: ["iGEM", "Parts", "Resources"],
-    type: "lab-note",
-    confidence: "validated",
-    featured: false,
-    excerpt:
-      "I finally sat down and explored the iGEM Registry of Standard Biological Parts. It's overwhelming at first, but once you understand the naming conventions and documentation standards, it becomes an incredible resource.",
-  },
-  {
-    slug: "reading-gel-electrophoresis",
-    title: "Reading My First Gel Electrophoresis Results",
-    deck: "Learning to interpret bands, smears, and the occasional mystery blob.",
-    date: "2024-02-10",
-    readingTime: "6 min",
-    tags: ["Techniques", "Electrophoresis", "Lab Skills"],
-    type: "lab-note",
-    confidence: "hypothesis",
-    featured: true,
-    excerpt:
-      "Today I ran my first gel and tried to interpret the results. The ladder looked clean but my sample lanes had some unexpected bands. Here's what I think happened and what I'll change next time.",
-  },
-  {
-    slug: "failed-transformation",
-    title: "Failed Transformation: What Went Wrong",
-    deck: "Heat shock timing, competent cell handling, and hard-learned lessons.",
-    date: "2024-02-03",
+    slug: "phase-1-luciferase-exogenous-d-luciferin",
+    title: "Phase 1: Luciferase + Exogenous D-Luciferin",
+    deck: "",
+    date: "2026-02-16",
     readingTime: "5 min",
-    tags: ["Transformation", "Troubleshooting", "Mistakes"],
+    tags: ["Bioluminescence", "Luciferase", "Wet Lab"],
     type: "lab-note",
-    confidence: "hypothesis",
     featured: true,
-    excerpt:
-      "My first attempt at transforming E. coli with a GFP plasmid failed. Zero colonies on the plate. I'm documenting what I think went wrong—mostly around competent cell handling and heat shock duration.",
+    excerpt: "",
   },
   {
-    slug: "understanding-gfp",
-    title: "Understanding GFP: My First Fluorescent Protein",
-    deck: "Why green fluorescent protein is the 'Hello World' of synthetic biology.",
-    date: "2024-01-22",
-    readingTime: "7 min",
-    tags: ["GFP", "Proteins", "Fundamentals"],
-    type: "lab-note",
-    confidence: "validated",
-    featured: false,
-    excerpt:
-      "GFP is everywhere in biology. I spent the week understanding how it works at the molecular level—from the chromophore formation to why it's become the default reporter in so many experiments.",
-  },
-  {
-    slug: "setting-up-home-lab",
-    title: "Day 1: Setting Up My Home Lab Workspace",
-    deck: "Equipment choices, safety considerations, and realistic expectations.",
-    date: "2024-01-15",
+    slug: "phase-0-ruby-red-agroinfiltration-practice",
+    title: "Phase 0: RUBY-RED Agroinfiltration Practice",
+    deck: "Use RUBY-RED as a visual reporter to confirm agroinfiltration works in N. rustica before attempting bioluminescence constructs.",
+    date: "2026-02-16",
     readingTime: "8 min",
-    tags: ["Setup", "Equipment", "Getting Started"],
+    tags: ["Agroinfiltration", "Plant Biology", "Wet Lab"],
     type: "lab-note",
-    confidence: "validated",
-    featured: false,
-    excerpt:
-      "I decided to set up a basic workspace for learning molecular biology techniques. Here's what I bought, what I skipped, and what safety precautions I'm taking as a beginner.",
+    featured: true,
+    excerpt: "Use Michael Rae's Agrobacterium with RUBY-RED to infiltrate N. rustica leaves. Confirm you can get genes into plant cells: success = visible red pigmentation.",
   },
 ];
 
@@ -187,39 +144,25 @@ export const projects: Project[] = [
     title: "Engineering Bioluminescent Plants",
     deck: "Bringing firefly light to plants using synthetic gene circuits.",
     description:
-      "The ultimate goal of my synthetic biology work: making plants that glow autonomously. This project takes the candidate genes identified in the Missing Enzyme Hunt and engineers them into a functional bioluminescent pathway in N. benthamiana. Starting with known components like firefly luciferase and working up to the full four gene pathway with BGL, Laccase, ACOT1, and AkaLuc, all targeted to the peroxisome for autonomous luciferin production.",
+      "The ultimate goal of my synthetic biology work: making plants that glow autonomously. This project takes the candidate genes identified in the Missing Enzyme Hunt and engineers them into a functional bioluminescent pathway in N. rustica. Starting with known components like wild-type Photinus pyralis firefly luciferase and working up to the full four-gene pathway (BGL, Laccase, ACOT1, and luciferase) all targeted to the peroxisome for autonomous luciferin production.",
     status: "active",
     tags: ["Bioluminescence", "Plant Biology", "Wet Lab"],
-    timeline: [
+    milestones: [
       {
-        title: "First bacterial transformation",
-        date: "2025-02-01",
+        title: "Phase 1: Luciferase + exogenous D-luciferin",
+        date: "2026-02-16",
         description:
-          "Performed first hands on cloning work, transforming E. coli with pTIR DV and pSB1C3 plasmids at Scott's community lab. Built foundational wet lab skills.",
+          "Express wild-type Photinus pyralis luciferase in N. rustica and test for bioluminescence with externally supplied D-luciferin.",
+        linkedHref: "/lab-notes/phase-1-luciferase-exogenous-d-luciferin",
+        linkedLabel: "Read the lab note",
       },
       {
-        title: "Agrobacterium strain acquired",
-        date: "2025-02-15",
+        title: "Phase 0: RUBY-RED agroinfiltration practice",
+        date: "2026-02-16",
         description:
-          "Secured access to Agrobacterium tumefaciens GV3101 through Michael Rae at the community lab. Navigated Canadian regulatory requirements to confirm no special licensing needed.",
-      },
-      {
-        title: "N. benthamiana seedlings started",
-        date: "2025-03-01",
-        description:
-          "Sourced and planted N. benthamiana seeds. These need 4 to 5 weeks of growth before they are ready for agroinfiltration experiments.",
-      },
-      {
-        title: "MoClo toolkit and gene assembly",
-        date: "2025-03-15",
-        description:
-          "Assembling synthetic genes into MoClo compatible expression cassettes with peroxisome targeting signals for the full bioluminescent pathway.",
-      },
-      {
-        title: "Agroinfiltration and glow testing",
-        date: "2025-04-15",
-        description:
-          "Infiltrating N. benthamiana leaves with the engineered constructs and imaging for bioluminescence in a dark room. The moment of truth.",
+          "Use RUBY-RED as a visual reporter to confirm agroinfiltration works in N. rustica before attempting bioluminescence constructs.",
+        linkedHref: "/lab-notes/phase-0-ruby-red-agroinfiltration-practice",
+        linkedLabel: "Read the lab note",
       },
     ],
   },

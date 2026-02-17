@@ -29,8 +29,8 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-[480px] text-[1.0625rem] leading-relaxed text-slate-400">
-              I&rsquo;m Iman. I design genetic circuits, engineer bioluminescent
-              organisms, and document everything I learn along the way.
+              I&rsquo;m Iman. I engineer bioluminescent organisms, and document
+              everything I learn along the way.
             </p>
 
             {/* CTA row */}
@@ -62,8 +62,8 @@ export function Hero() {
               {/* Image frame */}
               <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-2xl">
                 <Image
-                  src="/images/Gel_electrophoresis_2.jpg"
-                  alt="Gel electrophoresis results from the lab"
+                  src="/images/fireflies.webp"
+                  alt="Fireflies glowing on a leaf"
                   width={560}
                   height={380}
                   className="object-cover"
@@ -79,7 +79,7 @@ export function Hero() {
                     </span>
                   </div>
                   <p className="mt-1 text-sm leading-snug font-medium text-white/90">
-                    Gel electrophoresis &mdash; confirming plasmid constructs
+                    Photinus pyralis
                   </p>
                   <p className="mt-0.5 font-mono text-[0.6875rem] text-slate-500">
                     Feb 2026

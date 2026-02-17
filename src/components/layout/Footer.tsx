@@ -12,9 +12,6 @@ export function Footer() {
             >
               Iman K.
             </Link>
-            <p className="mt-1 text-sm text-secondary">
-              Synthetic biologist &amp; builder.
-            </p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-secondary">
             <Link
