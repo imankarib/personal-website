@@ -1,4 +1,10 @@
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+const MAX_ATTEMPTS = 5;
+const LOCKOUT_MS = 15 * 60 * 1000; // 15 minutes
+
+const attempts = new Map<string, { count: number; lockedUntil: number }>();
 
 async function hmacSign(value: string, secret: string): Promise<string> {
   const encoder = new TextEncoder();
@@ -15,14 +21,37 @@ async function hmacSign(value: string, secret: string): Promise<string> {
     .join("");
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  const ip =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
+    request.headers.get("x-real-ip") ??
+    "unknown";
+
+  const now = Date.now();
+  const record = attempts.get(ip);
+
+  if (record && now < record.lockedUntil) {
+    const minutesLeft = Math.ceil((record.lockedUntil - now) / 60000);
+    return NextResponse.json(
+      { error: `Too many attempts. Try again in ${minutesLeft} minute${minutesLeft === 1 ? "" : "s"}.` },
+      { status: 429 },
+    );
+  }
+
   const body = (await request.json()) as { password?: string };
   const loginPassword = process.env.SITE_LOGIN_PASSWORD;
   const authSecret = process.env.SITE_AUTH_SECRET;
 
   if (!loginPassword || !authSecret || body.password !== loginPassword) {
+    const count = (record && now >= record.lockedUntil ? 0 : record?.count ?? 0) + 1;
+    attempts.set(ip, {
+      count,
+      lockedUntil: count >= MAX_ATTEMPTS ? now + LOCKOUT_MS : 0,
+    });
     return NextResponse.json({ error: "Wrong password" }, { status: 401 });
   }
+
+  attempts.delete(ip);
 
   const value = "authenticated";
   const signature = await hmacSign(value, authSecret);
@@ -33,7 +62,7 @@ export async function POST(request: Request) {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
-    maxAge: 60 * 60 * 24 * 30, // 30 days
+    maxAge: 60 * 60 * 24 * 30,
     path: "/",
   });
 

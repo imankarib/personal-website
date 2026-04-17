@@ -20,9 +20,10 @@ export default function LoginPage() {
       });
 
       if (res.ok) {
-        window.location.href = "/";
+        window.location.href = "/lab-notes";
       } else {
-        setError("Wrong password");
+        const data = (await res.json()) as { error?: string };
+        setError(data.error ?? "Wrong password");
         setPassword("");
       }
     } catch {
@@ -36,7 +37,7 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center px-4">
       <div className="w-full max-w-sm">
         <h1 className="font-heading mb-8 text-center text-2xl font-semibold tracking-tight">
-          This site is password-protected
+          Lab Notes are password-protected
         </h1>
 
         <form onSubmit={handleSubmit} className="space-y-4">

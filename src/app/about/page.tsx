@@ -49,31 +49,28 @@ export default function AboutPage() {
         <p className="text-ink mt-5 text-[1.0625rem] leading-[1.78]">
           In my final year of undergraduate studies, I realized I had chosen the
           wrong major. I had always been drawn to STEM, but had committed early
-          to a path that no longer felt right. During my last semester, I
-          enrolled in as many foundational science courses as I could alongside
-          my remaining requirements: Calculus, Physics, Chemistry, you name it.
-          I did well, loved every second, and graduated with a degree that no
-          longer reflected where I wanted to go.
+          to a path that no longer felt right. My last semester I loaded up on
+          everything I&rsquo;d missed, Calculus, Physics, Chemistry, did well,
+          loved it, and graduated with a degree that no longer reflected where I
+          was going.
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          For about a year, I tried to figure out my way in. I attended
-          conferences, spent time working with large nonprofit organizations,
-          and did LeetCode to keep my brain engaged. I was moving, learning, and
-          searching, but still didn’t have a clear entry point. Eventually, I
-          found myself on a trip with some incredible founders whose motto can
-          be summed down to: “You can just do things”. It sounds obvious, but it
-          never really clicked for me until then.
+          For about a year I searched for an entry point. I attended conferences,
+          worked with large nonprofits, kept my mind sharp. I was moving and
+          learning, but hadn&rsquo;t found the thing yet. Then I went on a trip
+          with a group of founders whose worldview collapsed into one idea: you
+          can just do things. It sounds obvious. It didn&rsquo;t click for me
+          until then.
         </p>
         <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          Upon returning, I applied to HTGAA, found a lab, and got to work.
-          Anything I lack, I’m determined to learn. It was love at first PCR and
-          George Church lecture. I knew pretty quickly I was where I was
-          supposed to be. My current focus is plant engineering, specifically
-          exploring luciferin biosynthesis.
-        </p>
-        <p className="text-ink mt-4 text-[1.0625rem] leading-[1.78]">
-          This is a record of work in progress. It includes both errors and
-          genuine discoveries. Thank you for stopping by.
+          I came back, applied to HTGAA, found a lab in Vancouver, and got to
+          work. I knew within weeks I was exactly where I was supposed to be. My
+          current project: engineering the first autonomously bioluminescent plant
+          using the firefly luciferin pathway. The core insight is that vascular
+          plants already produce the precursors, the missing piece is the
+          enzymatic steps to complete luciferin synthesis. I&rsquo;m building
+          those in from a community lab, with no institutional backing and no
+          safety net. You can just do things.
         </p>
       </section>
 
@@ -84,9 +81,8 @@ export default function AboutPage() {
         </h2>
         <div className="bg-hairline mt-4 h-px w-full" aria-hidden="true" />
         <p className="text-ink mt-5 text-[1.0625rem] leading-[1.78]">
-          If you&rsquo;re learning synthetic biology too, or if you notice
-          something wrong in my writing, I genuinely want to hear from you. The
-          best way to reach me is by email.
+          If you&rsquo;re learning synthetic biology, or just want to talk, I
+          genuinely want to hear from you. The best way to reach me is by email.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-4">
           <a

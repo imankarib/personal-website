@@ -29,8 +29,7 @@ export function Hero() {
             </h1>
 
             <p className="mt-6 max-w-[480px] text-[1.0625rem] leading-relaxed text-slate-400">
-              I&rsquo;m Iman. I&rsquo;m learning synthetic biology while documenting
-              everything I learn along the way.
+              I&rsquo;m Iman. I&rsquo;m building the first firefly-pathway bioluminescent plant.
             </p>
 
             {/* CTA row */}

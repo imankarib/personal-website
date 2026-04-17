@@ -37,9 +37,11 @@ export function LatestLabNotes() {
                 ? `/lab-notes/${post.slug}`
                 : `/deep-dives/${post.slug}`;
 
+            const isLabNote = post.type === "lab-note";
+
             return (
               <Link key={post.slug} href={href} className="group block">
-                <article className="post-card h-full rounded-xl border border-hairline bg-paper p-6">
+                <article className={`post-card h-full rounded-xl border border-hairline bg-paper p-6 ${isLabNote ? "relative overflow-hidden" : ""}`}>
                   <div className="flex items-center gap-2.5">
                     <LabStamp type={post.type} />
                     <time
@@ -61,6 +63,10 @@ export function LatestLabNotes() {
                   <div className="mt-4 font-mono text-xs text-secondary/60">
                     {post.readingTime} read
                   </div>
+
+                  {isLabNote && (
+                    <div className="absolute inset-0 rounded-xl backdrop-blur-md" />
+                  )}
                 </article>
               </Link>
             );

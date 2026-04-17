@@ -19,13 +19,7 @@ async function hmacSign(value: string, secret: string): Promise<string> {
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  if (
-    pathname.startsWith("/login") ||
-    pathname.startsWith("/api/auth") ||
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/favicon") ||
-    /\.(ico|png|jpg|jpeg|svg|webp|gif|css|js|woff|woff2)$/.exec(pathname)
-  ) {
+  if (!pathname.startsWith("/lab-notes")) {
     return NextResponse.next();
   }
 
