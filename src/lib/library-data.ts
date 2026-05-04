@@ -51,4 +51,34 @@ export const papers: Paper[] = [
     keywords:
       "D-luciferin beetle caffeic acid fungal stereochemistry L-luciferin adenylated C4 proton ATP photon quantum yield O2 oxidation post-translational modifications prosthetic disulfide glycosylation ribosome 4-coumarate CoA ligase 4CL aromatic cysteine quinones benzothiazole pigment emission color 560 nm scotopic vision green red 1995",
   },
+  {
+    slug: "fallon-et-al-2016",
+    title:
+      "Sulfoluciferin is biosynthesized by a specialized luciferin sulfotransferase in fireflies",
+    authors: "Timothy R. Fallon et al.",
+    journal: "Biochemistry, Vol. 55, pp. 3341-3344 (2016)",
+    era: "2010-2026",
+    keywords:
+      "sulfoluciferin luciferin sulfotransferase LST firefly Biochemistry 2016 Fallon Li Vicent Weng PAPS sulfonation Photinus pyralis Aquatica lateralis Ignelater luminosus storage form D-luciferin SULT detoxification ASKSA adenylyl-sulfate kinase sulfate adenylyltransferase LC-HRAM-MS arbutin Oba Lampyrid click beetle peroxisome N. tabacum tobacco heterologous",
+  },
+  {
+    slug: "fallon-et-al-2018",
+    title:
+      "Firefly genomes illuminate parallel origins of bioluminescence in beetles",
+    authors: "Timothy R. Fallon et al.",
+    journal: "eLife, Vol. 7, e36495 (2018)",
+    era: "2010-2026",
+    keywords:
+      "firefly genome bioluminescence beetles parallel evolution eLife 2018 Fallon Lower Chang Bessho-Uehara Martin Bewick Photinus pyralis Aquatica lateralis click beetle Ignelater luminosus luciferase Luc1 Luc2 PACS peroxisomal fatty acyl-CoA synthetase neofunctionalization aBSREL dN/dS Hi-C BUSCO PTS1 SKL PEX11 ASKSA PAPS sulfonation cystathionine gamma-lyase oxyluciferin PPYR_02911 PPYR_05464 BGLU46 ACOT9 CYP4C P450 peroxiredoxin lantern HE DE de novo Kanie iGEM BBa_K389004 directed evolution",
+  },
+  {
+    slug: "oba-et-al-2013",
+    title:
+      "Biosynthesis of firefly luciferin in adult lantern: decarboxylation of L-cysteine is a key step for benzothiazole ring formation",
+    authors: "Yuichi Oba et al.",
+    journal: "PLoS ONE, Vol. 8, e84023 (2013)",
+    era: "2010-2026",
+    keywords:
+      "biosynthesis firefly luciferin adult lantern decarboxylation L-cysteine benzothiazole ring formation PLoS ONE 2013 Oba Yoshida Kanie Ojika Inouye Luciola lateralis stable isotope LC ESI TOF MS in vivo CBT McCapra Okada Colepicolo benzoquinone hydroquinone arbutin glucosidase BGL CoA D-luciferin L-luciferin Niwa racemization thiazoline carboxyl CO2 chiral column three-precursor",
+  },
 ];
