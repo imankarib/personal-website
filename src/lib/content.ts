@@ -154,7 +154,7 @@ export const projects: Project[] = [
         title: "PTS1 mining reveals two missing pathway steps",
         date: "2026-04-23",
         description:
-          "Used peroxisome-targeting signal (PTS1) analysis as an orthogonal filter on the full firefly proteome. Identified PPYR_01108 (peroxisomal 4CL/PACS, the missing peroxisomal activation step) and PPYR_09240 (AMACR/lantern racemase, the missing chiral-inversion step) — two candidates invisible to differential expression filtering. Updated construct now has seven TUs.",
+          "Used peroxisome-targeting signal (PTS1) analysis as an orthogonal filter on the full firefly proteome. Identified PPYR_01108 (peroxisomal 4CL/PACS, the missing peroxisomal activation step) and PPYR_09240 (AMACR/lantern racemase, the missing chiral-inversion step), two candidates invisible to differential expression filtering. Updated construct now has seven TUs.",
         linkedHref: "/deep-dives/pts1-mining-reveals-two-missing-pathway-steps",
         linkedLabel: "Read the full deep dive",
       },

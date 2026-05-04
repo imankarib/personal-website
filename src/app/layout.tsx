@@ -7,8 +7,8 @@ import { Footer } from "~/components/layout/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Iman — Synthetic Biologist & Builder",
-    template: "%s — Iman",
+    default: "Iman, Synthetic Biologist & Builder",
+    template: "%s, Iman",
   },
   description:
     "I'm Iman. I design genetic circuits, engineer bioluminescent organisms, and document everything I learn along the way.",
