@@ -62,7 +62,7 @@ export default function ZhangEtAl2020Page() {
           D-luciferin, monitored on a chiral HPLC column. This is the first
           direct enzymatic confirmation in an insect ACOT of the deracemization
           step that Niwa 2006 and Maeda 2017 had outlined with a bacterial
-          TESB stand-in. AteACOT1 is the orthologue of the gene Iman has
+          TESB stand-in. AteACOT1 is the orthologue of the gene I have
           cloned as TU4 (PpyrACOT9 in the iGEM/Fallon nomenclature lineage),
           and the cluster-I clade in the Zhang phylogeny is the same ancestral
           mitochondrial-ACOT lineage (HomoACOT9/MusACOT9-10 sisters) that
@@ -96,7 +96,7 @@ export default function ZhangEtAl2020Page() {
           <em>Drosophila</em> and other insect ACOTs. The authors do the
           deracemization assay in vitro, so the cell-biology question of how
           a PTS1-less ACOT gets into the peroxisome where luciferase is acting
-          is left open. Practically: for TU4, Iman has reasonably retained
+          is left open. Practically: for TU4, I have reasonably retained
           ACOT9 without an SKL tag based on the <em>M. musculus</em>{" "}
           mitochondrial-targeting precedent, but the question of whether the
           active firefly enzyme actually reaches the peroxisome in a
@@ -117,23 +117,23 @@ export default function ZhangEtAl2020Page() {
           Lampyridae/Elateridae split (~174 to 115 Mya); the elaterid
           luciferase neofunctionalized later (~131 Mya). This corroborates
           Fallon 2018&apos;s parallel-origin conclusion with more taxa. Does
-          not change Iman&apos;s design but worth citing alongside Fallon
-          2018 wherever convergence comes up.
+          not change my design but worth citing alongside Fallon 2018
+          wherever convergence comes up.
         </li>
         <li className="border-hairline border-l-2 pl-4">
           <strong>A taxonomic reshuffling worth noting in passing.</strong>{" "}
           Phylogenomics places <em>Lamprigera</em> inside Luciolinae rather
           than Lampyrinae, contradicting earlier morphology-based
           classifications. Of marginal relevance to the construct work, but if
-          Iman ever cites <em>Lamprigera</em> sequences (e.g. for a luciferase
-          or BGL ortholog comparison) the subfamily attribution should follow
+          I ever cite <em>Lamprigera</em> sequences (e.g. for a luciferase or
+          BGL ortholog comparison) the subfamily attribution should follow
           Zhang 2020.
         </li>
       </ul>
 
       <p className="text-ink mt-10 text-[1.0625rem] leading-[1.78]">
         <strong>Bottom line for the project:</strong> This paper is the
-        citation for TU4. Iman&apos;s ACOT9 choice, a mammalian (
+        citation for TU4. My ACOT9 choice, a mammalian (
         <em>Mus musculus</em>) cluster-I ACOT, no SKL, with a mitochondrial
         targeting sequence, sits in the same phylogenetic clade that Zhang
         2020 directly demonstrated to perform L &rarr; D luciferin conversion

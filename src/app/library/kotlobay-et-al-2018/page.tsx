@@ -87,7 +87,7 @@ export default function KotlobayEtAl2018Page() {
           without supplemental feeding. In contrast, plants do not natively
           make D-luciferin or its hydroquinone/cysteine-derived precursors,
           which is why the firefly route requires importing the entire
-          luciferin biosynthetic chain (TU2 through TU4 in Iman&apos;s design)
+          luciferin biosynthetic chain (TU2 through TU4 in my design)
           rather than parasitizing existing flux.
         </li>
         <li className="border-hairline border-l-2 pl-4">
@@ -124,7 +124,7 @@ export default function KotlobayEtAl2018Page() {
         the one that already has a credible autoluminescent-plant
         proof-of-concept (Mitiouchkina 2020) and that uses an endogenous plant
         metabolite (caffeic acid) rather than a synthesized heterologous
-        precursor (D-luciferin). For Iman&apos;s project, Kotlobay 2018 is
+        precursor (D-luciferin). For my project, Kotlobay 2018 is
         worth knowing well for two reasons. First, in any proposal or pitch,
         the existence of the fungal route is the obvious &ldquo;why not just
         do this?&rdquo; question, and the answer needs to engage seriously

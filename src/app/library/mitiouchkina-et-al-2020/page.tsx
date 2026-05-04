@@ -109,8 +109,8 @@ export default function MitiouchkinaEtAl2020Page() {
 
       <p className="text-ink mt-10 text-[1.0625rem] leading-[1.78]">
         <strong>Bottom line for the project:</strong> This paper is the
-        elephant in the room for any bioluminescent-plant pitch and Iman
-        should engage with it directly rather than around it. Three honest
+        elephant in the room for any bioluminescent-plant pitch and I should
+        engage with it directly rather than around it. Three honest
         framings work depending on context. (1) Different photonics, different
         applications: fungal autoluminescence gives a continuous dim glow that
         tracks caffeic acid flux, beautiful, commercially proven, and exactly

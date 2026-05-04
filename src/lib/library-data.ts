@@ -52,6 +52,17 @@ export const papers: Paper[] = [
       "D-luciferin beetle caffeic acid fungal stereochemistry L-luciferin adenylated C4 proton ATP photon quantum yield O2 oxidation post-translational modifications prosthetic disulfide glycosylation ribosome 4-coumarate CoA ligase 4CL aromatic cysteine quinones benzothiazole pigment emission color 560 nm scotopic vision green red 1995",
   },
   {
+    slug: "watkins-et-al-2018",
+    title:
+      "New Zealand Glowworm (Arachnocampa luminosa) Bioluminescence Is Produced by a Firefly-Like Luciferase but an Entirely New Luciferin",
+    authors:
+      "Oliver C. Watkins, Miriam L. Sharpe, Nigel B. Perry, Kurt L. Krause",
+    journal: "Scientific Reports, Vol. 8, Article 3278 (Feb. 19, 2018)",
+    era: "2010-2026",
+    keywords:
+      "Watkins 2018 Arachnocampa luminosa New Zealand glowworm Keroplatidae Diptera fungus gnat luciferase ANL superfamily acyl-CoA synthetase tyrosine xanthurenic acid kynurenine LRC luciferin Photinus pyralis Luciola cruciata Trowell richardsae Mofford promiscuous Fridericia heliota Watasenia scintillans coelenterazine convergent evolution neofunctionalization adenylation MS NMR Sharpe Perry Krause",
+  },
+  {
     slug: "mitiouchkina-et-al-2020",
     title: "Plants with Genetically Encoded Autoluminescence",
     authors:
