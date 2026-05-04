@@ -52,6 +52,78 @@ export const papers: Paper[] = [
       "D-luciferin beetle caffeic acid fungal stereochemistry L-luciferin adenylated C4 proton ATP photon quantum yield O2 oxidation post-translational modifications prosthetic disulfide glycosylation ribosome 4-coumarate CoA ligase 4CL aromatic cysteine quinones benzothiazole pigment emission color 560 nm scotopic vision green red 1995",
   },
   {
+    slug: "conti-et-al-1996",
+    title:
+      "Crystal Structure of Firefly Luciferase Throws Light on a Superfamily of Adenylate-Forming Enzymes",
+    authors: "Elena Conti, Nicholas P. Franks, Peter Brick",
+    journal: "Structure, Vol. 4, Issue 3 (Mar. 15, 1996), pp. 287-298",
+    era: "pre-2000s",
+    keywords:
+      "Conti Franks Brick 1996 crystal structure firefly luciferase Photinus pyralis 1LCI ANL superfamily adenylate-forming enzymes acyl-CoA synthetase NRPS 4-coumarate ligase 4CL Luciola cruciata Nakatsu Gulick Branchini DLSA luciferyl-AMP domain closure conformational dynamics N-terminal C-terminal apo PDB structural biology two-domain fold mechanism",
+  },
+  {
+    slug: "yu-et-al-2025",
+    title:
+      "Engineering Autonomously Luminescent Plants Using the Fungal Bioluminescence Pathway",
+    authors: "Xiaolei Yu, Tiange Wang, C. Kong, Hao Du",
+    journal:
+      "New Phytologist, Vol. 248, Issue 5 (2025), pp. 2251-2261, DOI: 10.1111/nph.70601",
+    era: "2010-2026",
+    keywords:
+      "Yu Wang Kong Du 2025 fungal bioluminescence pathway FBP New Phytologist autoluminescent plants Luz HispS H3H CPH Neonothopanus nambi caffeic acid phenylpropanoid lignin flavonoid Mitiouchkina 2020 Zheng 2023 Shakhova 2024 BnC3H1 Brassica napus NPGA Aspergillus nidulans Light Bio Planta Firefly Petunia Du Trends Biotechnology Plant Science directed evolution rational design biosensor stress-responsive promoter PR-protein soil moisture salinity heavy metal N. tabacum tobacco firefly luciferase Conti Akaluc TU3 BGLU46 PPYR_02911 AtLAC17",
+  },
+  {
+    slug: "wang-et-al-2025",
+    title:
+      "Comparative Transcriptomic Analysis Reveals Bioluminescence-Related Genes in Firefly Pyrocoelia pectoralis",
+    authors: "Guobao Wang, Lei Nie, Huanxin Li",
+    journal: "Genomics, Vol. 117, Issue 5, Article 111101 (Aug. 2025)",
+    era: "2010-2026",
+    keywords:
+      "Wang Nie Li 2025 Pyrocoelia pectoralis transcriptome lantern bioluminescence Lampyrinae Luciolinae Photinus pyralis Lamprigera yunnana Abscondita terminalis Aquatica lateralis Fu 2017 2024 cystathionine gamma-lyase CGL 4-hydroxyphenylpyruvate dioxygenase HPPD beta-glucosidase BGL2 BGLU46 4-coumarate CoA ligase 4CL cysteine dioxygenase CDO1 luciferin biosynthesis arbutin hydroquinone benzoquinone N. tabacum tobacco TU3 cross-species convergence Zhang Fallon Oba Kanie",
+  },
+  {
+    slug: "tsarkova-2021",
+    title:
+      "Luciferins Under Construction: A Review of Known Biosynthetic Pathways",
+    authors: "Aleksandra S. Tsarkova",
+    journal:
+      "Frontiers in Ecology and Evolution, Vol. 9, Article 667829 (Sep. 20, 2021)",
+    era: "2010-2026",
+    keywords:
+      "Tsarkova 2021 luciferin biosynthesis review Frontiers Ecology Evolution Shemyakin Ovchinnikov Pirogov RNRMU Yampolsky Sarkisyan Kotlobay Planta autoluminescent Mitiouchkina bacterial lux fungal caffeic acid cycle hispidin H3H luz CPH coelenterazine vargulin Fridericia Odontosyllis dinoflagellate Latia Diplocardia D-luciferin tyrosine tryptophan phenylalanine cysteine pheomelanogenesis detoxification de Souza Rees Timmins Dubuisson Napolitano arbutin hydroquinone benzoquinone Michael addition Lampyridae Elateridae Phengodidae Zhang Fallon LRE oxyluciferin recycling sulfoluciferin sulfotransferase Lamprigera Abscondita Adams Miller TU1 TU4",
+  },
+  {
+    slug: "adams-miller-2020",
+    title: "Enzymatic Promiscuity and the Evolution of Bioluminescence",
+    authors: "Spencer T. Adams Jr., Stephen C. Miller",
+    journal: "The FEBS Journal, Vol. 287, Issue 7 (Apr. 2020), pp. 1369-1380",
+    era: "2010-2026",
+    keywords:
+      "Adams Miller 2020 firefly luciferase Fluc Photinus pyralis ACSL acyl-CoA synthetase bifunctional enzyme promiscuity bioluminescence evolution Drosophila CG6178 CycLuc2 Mofford Agrypnus binodulus AbLL Oba 2003 2006 2009 latent luciferase domain swap N-terminal C-terminal SET single electron transfer dehydroluciferyl-AMP CoA Promega Arabidopsis thaliana At5g63380 OPDA jasmonate peroxisomal ACSL plant N. tabacum L-luciferin D-luciferin epimerization racemization Niwa Maeda TESB Zhang AteACOT1 ACOT9 TU1 TU4 Bombardier beetle benzoquinone detoxification Conti Nakatsu Gulick Fallon",
+  },
+  {
+    slug: "kato-et-al-2024",
+    title: "A Practical, Biomimetic, One-Pot Synthesis of Firefly Luciferin",
+    authors:
+      "Maria Kato, Kazuaki Tsuchihashi, Shusei Kanie, Yuichi Oba, Toshio Nishikawa",
+    journal: "Scientific Reports, Vol. 14, Article 30461 (Dec. 25, 2024)",
+    era: "2010-2026",
+    keywords:
+      "Kato Nishikawa Tsuchihashi Kanie Oba 2024 D-luciferin synthesis biomimetic one-pot p-benzoquinone L-cysteine D-cysteine CBT 2-cyano-6-hydroxybenzothiazole White 1961 Niwa Maeda racemization Mitiouchkina agroinfiltration cost commercial Nagoya AIST Hokkaido firefly luciferin biosynthesis Michael addition cyclization",
+  },
+  {
+    slug: "de-souza-et-al-2022",
+    title:
+      "Biosensing Firefly Luciferin Synthesis in Bacteria Reveals a Cysteine-Dependent Quinone Detoxification Route in Coleoptera",
+    authors:
+      "Daniel Rangel de Souza, Jaqueline Rodrigues Silva, Ariele Moreira, Vadim R. Viviani",
+    journal: "Scientific Reports, Vol. 12, Article 14815 (Aug. 31, 2022)",
+    era: "2010-2026",
+    keywords:
+      "de Souza Viviani 2022 firefly luciferin biosynthesis E. coli BL21 Pichia pastoris Amydetes vivianii AmyLuc Pyrearinus termitilluminans biosensor cysteine D-cysteine L-cysteine benzoquinone hydroquinone Rhus vernicifera laccase AtLAC17 TU5 BGLU46 PPYR_02911 ACOT9 quinone detoxification cytotoxicity racemization Niwa Kanie Oba dopamine sclerotization tyrosine hydroxylase DOPA decarboxylase NBAD synthetase Phengodidae Lampyridae Elateridae Rhagophthalmidae Coleoptera N. tabacum",
+  },
+  {
     slug: "watkins-et-al-2018",
     title:
       "New Zealand Glowworm (Arachnocampa luminosa) Bioluminescence Is Produced by a Firefly-Like Luciferase but an Entirely New Luciferin",
