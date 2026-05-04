@@ -94,6 +94,19 @@ export const deepDives: Post[] = [
       "I found a copper oxidase (PPYR_12315) with ~100× higher expression in the lantern than other copper-binding enzymes. Structure, electrostatics, and conservation all pointed to it as a luciferin synthase candidate. HMMER later showed it was actually a lysyl oxidase aka. an entirely different family. A good lesson in research.",
   },
   {
+    slug: "pts1-mining-reveals-two-missing-pathway-steps",
+    title: "PTS1 Mining Reveals Two Missing Pathway Steps",
+    deck: "Using peroxisome-targeting signal analysis to identify the two enzymatic steps in luciferin biosynthesis that have never been cloned.",
+    date: "2026-04-23",
+    readingTime: "15 min",
+    tags: ["Bioluminescence", "Bioinformatics", "Luciferin", "Genomics"],
+    type: "deep-dive",
+    confidence: "speculative",
+    featured: false,
+    excerpt:
+      "By searching the firefly proteome for proteins carrying a peroxisome-targeting signal 1 (PTS1), I identified candidates for the two enzymatic steps in the luciferin biosynthesis pathway that remain uncharacterized. This approach bypasses expression-level noise and focuses on subcellular localization as the primary filter.",
+  },
+  {
     slug: "mining-fallon-luciferin-pathway",
     title:
       "Mining Fallon et al. for Luciferin Pathway Candidates in Photinus pyralis",
@@ -135,6 +148,14 @@ export const projects: Project[] = [
         description:
           "Applied two-layer filtering (expression + enzyme annotation) to Fallon's differential expression data, reducing 15,773 genes to 18 enzyme candidates. After manual review, cross-species BLAST, and phylogenetic analysis, identified four novel candidates (PPYR_14756, PPYR_02911, PPYR_02910, PPYR_14056) for luciferin biosynthesis.",
         linkedHref: "/deep-dives/mining-fallon-luciferin-pathway",
+        linkedLabel: "Read the full deep dive",
+      },
+      {
+        title: "PTS1 mining reveals two missing pathway steps",
+        date: "2026-04-23",
+        description:
+          "Used peroxisome-targeting signal (PTS1) analysis as an orthogonal filter on the full firefly proteome. Identified PPYR_01108 (peroxisomal 4CL/PACS, the missing peroxisomal activation step) and PPYR_09240 (AMACR/lantern racemase, the missing chiral-inversion step) — two candidates invisible to differential expression filtering. Updated construct now has seven TUs.",
+        linkedHref: "/deep-dives/pts1-mining-reveals-two-missing-pathway-steps",
         linkedLabel: "Read the full deep dive",
       },
     ],
