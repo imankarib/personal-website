@@ -52,6 +52,48 @@ export const papers: Paper[] = [
       "D-luciferin beetle caffeic acid fungal stereochemistry L-luciferin adenylated C4 proton ATP photon quantum yield O2 oxidation post-translational modifications prosthetic disulfide glycosylation ribosome 4-coumarate CoA ligase 4CL aromatic cysteine quinones benzothiazole pigment emission color 560 nm scotopic vision green red 1995",
   },
   {
+    slug: "mitiouchkina-et-al-2020",
+    title: "Plants with Genetically Encoded Autoluminescence",
+    authors:
+      "Tatiana Mitiouchkina, Alexander S. Mishin, Louisa Gonzalez Somermeyer, Nadezhda M. Markina, et al.",
+    journal: "Nature Biotechnology, Vol. 38, Issue 8 (Apr. 27, 2020), pp. 944-946",
+    era: "2010-2026",
+    keywords:
+      "Mitiouchkina 2020 autoluminescent plants Nature Biotechnology Yampolsky Sarkisyan Planta Light Bio Firefly Petunia tobacco N. tabacum N. benthamiana nnLuz nnHispS nnH3H nnCPH fungal bioluminescence Neonothopanus nambi caffeic acid phenylpropanoid lignin flavonoid Agrobacterium NpgA PPTase polyketide synthase HispS hispidin wounding methyl jasmonate ethylene flux reporter Krichevsky bacterial lux LuxAB n-decyl aldehyde",
+  },
+  {
+    slug: "kotlobay-et-al-2018",
+    title:
+      "Genetically Encodable Bioluminescent System from Fungi",
+    authors:
+      "Alexey A. Kotlobay, Karen S. Sarkisyan, Yuliana A. Mokrushina, Marina Marcet-Houben, Ekaterina O. Serebrovskaya, Nadezhda M. Markina, et al.",
+    journal: "PNAS, Vol. 115, Issue 50 (Nov. 26, 2018), pp. 12728-12732",
+    era: "2010-2026",
+    keywords:
+      "Kotlobay 2018 fungal bioluminescence caffeic acid cycle Neonothopanus nambi hispidin synthase HispS hispidin-3-hydroxylase H3H luciferase nnLuz caffeylpyruvate hydrolase CPH NpgA Aspergillus nidulans phosphopantetheinyl transferase Pichia pastoris yeast TAL tyrosine ammonia lyase Rhodobacter capsulatus HpaB HpaC E. coli phenylpropanoid plant lignin Arabidopsis tobacco N. tabacum autoluminescent Mitiouchkina Light Bio Planta autonomy heterologous IVIS xenograft Agaricales convergent evolution",
+  },
+  {
+    slug: "zhang-et-al-2020",
+    title:
+      "Genomic and Experimental Data Provide New Insights Into Luciferin Biosynthesis and Bioluminescence Evolution in Fireflies",
+    authors:
+      "Ru Zhang, Jinwu He, Zhiwei Dong, Guichun Liu, Yuan Yin, Xinying Zhang, Qi Li, Yandong Ren, Yongzhi Yang, Wei Liu, Xianqing Chen, Wenhao Xia, Kang Duan, Fei Hao, Zeshan Lin, Jie Yang, Zhou Chang, Ruoping Zhao, Wenting Wan, Sihan Lu, Yanqiong Peng, Siqin Ge, Wen Wang, Xueyan Li",
+    journal: "Scientific Reports, Vol. 10, Article 15882 (Sep. 28, 2020)",
+    era: "2010-2026",
+    keywords:
+      "Zhang 2020 firefly genome Lamprigera yunnana Abscondita terminalis PacBio AteACOT1 AteACOT4 AteACOT9 ACOT acyl-CoA thioesterase deracemization L-luciferin D-luciferin chiral HPLC Niwa Maeda TESB cluster-I cystathionine gamma-lyase CDO CSAD tyrosine homogentisate benzoquinone 4CL SCPx thiolase Abd-B CRISPR Cas9 PTS1 peroxisome convergent evolution Lampyridae Elateridae Ignelater luminosus Luciolinae Lampyrinae phylogenomics divergence neofunctionalization Fallon TU4 PPYR ACOT9",
+  },
+  {
+    slug: "kanie-et-al-2018",
+    title:
+      "2-S-cysteinylhydroquinone is an Intermediate for the Firefly Luciferin Biosynthesis that Occurs in the Pupal Stage of the Japanese Firefly, Luciola lateralis",
+    authors: "Shusei Kanie, Yuichi Oba",
+    journal: "Bioorganic Chemistry, Vol. 80, pp. 223-229 (Oct. 2018)",
+    era: "2010-2026",
+    keywords:
+      "Kanie Oba 2018 2-S-cysteinylhydroquinone Michael addition cysteine benzoquinone hydroquinone Luciola lateralis pupae luciferin biosynthesis intermediate Bioorganic Chemistry stable isotope LC ESI TOF MS arbutin BGLU46 PPYR_02911 PPYR_05464 in vivo P450 N. tabacum",
+  },
+  {
     slug: "fallon-et-al-2016",
     title:
       "Sulfoluciferin is biosynthesized by a specialized luciferin sulfotransferase in fireflies",
