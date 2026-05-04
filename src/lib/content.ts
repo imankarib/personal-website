@@ -94,6 +94,19 @@ export const deepDives: Post[] = [
       "I found a copper oxidase (PPYR_12315) with ~100× higher expression in the lantern than other copper-binding enzymes. Structure, electrostatics, and conservation all pointed to it as a luciferin synthase candidate. HMMER later showed it was actually a lysyl oxidase aka. an entirely different family. A good lesson in research.",
   },
   {
+    slug: "updated-experimental-plan",
+    title: "Updated Experimental Plan",
+    deck: "A sequenced experimental progression for testing autonomous firefly bioluminescence in tobacco, with a real deliverable at each milestone and informative negatives as legitimate results.",
+    date: "2026-05-03",
+    readingTime: "20 min",
+    tags: ["Bioluminescence", "Synthetic Biology", "Wet Lab", "Project Plan"],
+    type: "deep-dive",
+    confidence: "hypothesis",
+    featured: true,
+    excerpt:
+      "The reframed plan acknowledges that endogenous substrate availability is the dominant unknown for firefly bioluminescence in tobacco. Rather than racing to deliver autonomous glow within HTGAA 2026, the plan stages experiments so each milestone produces a real deliverable, with a clear branch point: optimize if the minimum viable construct works, characterize the substrate landscape if it does not.",
+  },
+  {
     slug: "pts1-mining-reveals-two-missing-pathway-steps",
     title: "PTS1 Mining Reveals Two Missing Pathway Steps",
     deck: "Using peroxisome-targeting signal analysis to identify the two enzymatic steps in luciferin biosynthesis that have never been cloned.",

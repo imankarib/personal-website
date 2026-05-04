@@ -8,6 +8,7 @@ import { MiningFallonContent } from "~/components/deep-dives/MiningFallonContent
 import { CopperOxidaseContent } from "~/components/deep-dives/CopperOxidaseContent";
 import { FireflyBioluminescenceContent } from "~/components/deep-dives/FireflyBioluminescenceContent";
 import { Pts1MiningContent } from "~/components/deep-dives/Pts1MiningContent";
+import { UpdatedExperimentalPlanContent } from "~/components/deep-dives/UpdatedExperimentalPlanContent";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -33,6 +34,7 @@ const contentRegistry: Record<string, React.ComponentType> = {
   "copper-oxidase-wrong-protein": CopperOxidaseContent,
   "firefly-bioluminescence": FireflyBioluminescenceContent,
   "pts1-mining-reveals-two-missing-pathway-steps": Pts1MiningContent,
+  "updated-experimental-plan": UpdatedExperimentalPlanContent,
 };
 
 export default async function DeepDivePage({ params }: Props) {
